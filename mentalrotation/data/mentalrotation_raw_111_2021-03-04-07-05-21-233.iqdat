@@ -1,0 +1,130 @@
+build	computer.platform	date	time	subject	group	sessionid	blockcode	blocknum	trialcode	trialnum	subsets	subsets_practice	trialcount	stimulusitem1	subset	sameness	rotationAngle	response	responseCategory	correct	latency
+6.3.5	win	2021-03-03	23:05:21	111	1	1	practice	2	same_practice	1	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	1	44_0.jpg	44	same	0	31	same	1	910
+6.3.5	win	2021-03-03	23:05:21	111	1	1	practice	2	feedback	2	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	1	Correct!	44	same	0	57		0	1585
+6.3.5	win	2021-03-03	23:05:21	111	1	1	practice	2	different_practice	3	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	2	16_0_R.jpg	16	different	0	31	same	0	267
+6.3.5	win	2021-03-03	23:05:21	111	1	1	practice	2	feedback	4	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	2	Incorrect.	16	different	0	57		0	505
+6.3.5	win	2021-03-03	23:05:21	111	1	1	practice	2	different_practice	5	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	3	44_50_R.jpg	44	different	50	31	same	0	257
+6.3.5	win	2021-03-03	23:05:21	111	1	1	practice	2	feedback	6	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	3	Incorrect.	44	different	50	57		0	198
+6.3.5	win	2021-03-03	23:05:21	111	1	1	practice	2	same_practice	7	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	4	44_100.jpg	44	same	100	31	same	1	251
+6.3.5	win	2021-03-03	23:05:21	111	1	1	practice	2	feedback	8	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	4	Correct!	44	same	100	57		0	272
+6.3.5	win	2021-03-03	23:05:21	111	1	1	practice	2	different_practice	9	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	5	44_100_R.jpg	44	different	100	31	same	0	306
+6.3.5	win	2021-03-03	23:05:21	111	1	1	practice	2	feedback	10	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	5	Incorrect.	44	different	100	57		0	253
+6.3.5	win	2021-03-03	23:05:21	111	1	1	practice	2	different_practice	11	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	6	16_150_R.jpg	16	different	150	31	same	0	552
+6.3.5	win	2021-03-03	23:05:21	111	1	1	practice	2	feedback	12	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	6	Incorrect.	16	different	150	57		0	250
+6.3.5	win	2021-03-03	23:05:21	111	1	1	practice	2	different_practice	13	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	7	44_150_R.jpg	44	different	150	31	same	0	316
+6.3.5	win	2021-03-03	23:05:21	111	1	1	practice	2	feedback	14	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	7	Incorrect.	44	different	150	57		0	158
+6.3.5	win	2021-03-03	23:05:21	111	1	1	practice	2	same_practice	15	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	8	16_150.jpg	16	same	150	31	same	1	397
+6.3.5	win	2021-03-03	23:05:21	111	1	1	practice	2	feedback	16	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	8	Correct!	16	same	150	57		0	124
+6.3.5	win	2021-03-03	23:05:21	111	1	1	practice	2	different_practice	17	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	9	16_50_R.jpg	16	different	50	31	same	0	308
+6.3.5	win	2021-03-03	23:05:21	111	1	1	practice	2	feedback	18	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	9	Incorrect.	16	different	50	57		0	198
+6.3.5	win	2021-03-03	23:05:21	111	1	1	practice	2	different_practice	19	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	10	44_0_R.jpg	44	different	0	31	same	0	1804
+6.3.5	win	2021-03-03	23:05:21	111	1	1	practice	2	feedback	20	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	10	Incorrect.	44	different	0	57		0	226
+6.3.5	win	2021-03-03	23:05:21	111	1	1	practice	2	same_practice	21	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	11	16_0.jpg	16	same	0	32	different	0	958
+6.3.5	win	2021-03-03	23:05:21	111	1	1	practice	2	feedback	22	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	11	Incorrect.	16	same	0	57		0	213
+6.3.5	win	2021-03-03	23:05:21	111	1	1	practice	2	same_practice	23	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	12	44_150.jpg	44	same	150	31	same	1	1242
+6.3.5	win	2021-03-03	23:05:21	111	1	1	practice	2	feedback	24	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	12	Correct!	44	same	150	57		0	215
+6.3.5	win	2021-03-03	23:05:21	111	1	1	practice	2	same_practice	25	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	13	16_100.jpg	16	same	100	32	different	0	1932
+6.3.5	win	2021-03-03	23:05:21	111	1	1	practice	2	feedback	26	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	13	Incorrect.	16	same	100	57		0	252
+6.3.5	win	2021-03-03	23:05:21	111	1	1	practice	2	same_practice	27	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	14	44_50.jpg	44	same	50	31	same	1	1047
+6.3.5	win	2021-03-03	23:05:21	111	1	1	practice	2	feedback	28	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	14	Correct!	44	same	50	57		0	283
+6.3.5	win	2021-03-03	23:05:21	111	1	1	practice	2	different_practice	29	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	15	16_100_R.jpg	16	different	100	31	same	0	2029
+6.3.5	win	2021-03-03	23:05:21	111	1	1	practice	2	feedback	30	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	15	Incorrect.	16	different	100	57		0	200
+6.3.5	win	2021-03-03	23:05:21	111	1	1	practice	2	same_practice	31	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	16	16_50.jpg	16	same	50	32	different	0	1341
+6.3.5	win	2021-03-03	23:05:21	111	1	1	practice	2	feedback	32	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	16	Incorrect.	16	same	50	57		0	238
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	2	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	1	29_50_R.jpg	29	different	50	31	same	0	1633
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	4	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	2	29_150_R.jpg	29	different	150	32	different	1	964
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	6	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	3	23_0_R.jpg	23	different	0	32	different	1	978
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	8	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	4	23_50.jpg	23	same	50	31	same	1	719
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	10	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	5	35_150_R.jpg	35	different	150	32	different	1	384
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	12	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	6	21_100.jpg	21	same	100	31	same	1	310
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	14	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	7	6_100_R.jpg	6	different	100	32	different	1	318
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	16	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	8	19_50.jpg	19	same	50	32	different	0	374
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	18	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	9	23_50_R.jpg	23	different	50	32	different	1	324
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	20	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	10	23_0.jpg	23	same	0	32	different	0	1876
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	22	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	11	6_0_R.jpg	6	different	0	32	different	1	99
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	24	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	12	13_0_R.jpg	13	different	0	32	different	1	30
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	26	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	13	19_0_R.jpg	19	different	0	32	different	1	41
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	28	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	14	48_50.jpg	48	same	50	32	different	0	37
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	30	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	15	35_100_R.jpg	35	different	100	32	different	1	40
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	32	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	16	39_150.jpg	39	same	150	32	different	0	52
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	34	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	17	39_150_R.jpg	39	different	150	32	different	1	63
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	36	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	18	23_100.jpg	23	same	100	32	different	0	41
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	38	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	19	30_150.jpg	30	same	150	32	different	0	44
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	40	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	20	21_150_R.jpg	21	different	150	32	different	1	79
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	42	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	21	19_0.jpg	19	same	0	32	different	0	81
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	44	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	22	13_100_R.jpg	13	different	100	32	different	1	130
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	46	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	23	46_0_R.jpg	46	different	0	32	different	1	97
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	48	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	24	46_50_R.jpg	46	different	50	32	different	1	131
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	50	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	25	13_150.jpg	13	same	150	32	different	0	98
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	52	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	26	5_0.jpg	5	same	0	32	different	0	171
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	54	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	27	35_0_R.jpg	35	different	0	32	different	1	113
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	56	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	28	29_0.jpg	29	same	0	32	different	0	185
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	58	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	29	5_150_R.jpg	5	different	150	32	different	1	168
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	60	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	30	48_0.jpg	48	same	0	32	different	0	150
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	62	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	31	35_150.jpg	35	same	150	32	different	0	149
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	64	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	32	48_0_R.jpg	48	different	0	32	different	1	11
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	66	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	33	35_100.jpg	35	same	100	32	different	0	136
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	68	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	34	19_50_R.jpg	19	different	50	32	different	1	87
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	70	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	35	13_150_R.jpg	13	different	150	32	different	1	97
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	72	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	36	39_0_R.jpg	39	different	0	32	different	1	42
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	74	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	37	30_50.jpg	30	same	50	32	different	0	77
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	76	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	38	30_100_R.jpg	30	different	100	32	different	1	78
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	78	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	39	5_150.jpg	5	same	150	32	different	0	80
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	80	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	40	21_0.jpg	21	same	0	32	different	0	146
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	82	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	41	19_150.jpg	19	same	150	32	different	0	233
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	84	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	42	5_50_R.jpg	5	different	50	32	different	1	4
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	86	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	43	5_100_R.jpg	5	different	100	32	different	1	33
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	88	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	44	46_100_R.jpg	46	different	100	32	different	1	3
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	90	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	45	19_100.jpg	19	same	100	32	different	0	89
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	92	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	46	39_50_R.jpg	39	different	50	32	different	1	98
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	94	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	47	30_0.jpg	30	same	0	32	different	0	84
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	96	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	48	48_100_R.jpg	48	different	100	32	different	1	77
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	break	97	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	48	Take a break	48	different	100	57		0	2585
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	99	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	49	46_50.jpg	46	same	50	32	different	0	5
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	101	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	50	48_150.jpg	48	same	150	32	different	0	113
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	103	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	51	30_50_R.jpg	30	different	50	32	different	1	81
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	105	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	52	46_100.jpg	46	same	100	32	different	0	27
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	107	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	53	21_0_R.jpg	21	different	0	32	different	1	238
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	109	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	54	13_100.jpg	13	same	100	32	different	0	98
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	111	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	55	13_50.jpg	13	same	50	32	different	0	107
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	113	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	56	23_100_R.jpg	23	different	100	32	different	1	148
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	115	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	57	46_150_R.jpg	46	different	150	32	different	1	123
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	117	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	58	30_0_R.jpg	30	different	0	32	different	1	189
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	119	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	59	29_50.jpg	29	same	50	32	different	0	152
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	121	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	60	21_50.jpg	21	same	50	32	different	0	119
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	123	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	61	21_50_R.jpg	21	different	50	32	different	1	152
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	125	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	62	6_150_R.jpg	6	different	150	32	different	1	151
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	127	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	63	5_100.jpg	5	same	100	32	different	0	157
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	129	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	64	5_50.jpg	5	same	50	32	different	0	156
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	131	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	65	6_50_R.jpg	6	different	50	32	different	1	162
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	133	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	66	29_0_R.jpg	29	different	0	32	different	1	81
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	135	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	67	35_0.jpg	35	same	0	32	different	0	163
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	137	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	68	19_150_R.jpg	19	different	150	32	different	1	165
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	139	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	69	6_0.jpg	6	same	0	32	different	0	247
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	141	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	70	30_150_R.jpg	30	different	150	32	different	1	170
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	143	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	71	39_50.jpg	39	same	50	32	different	0	136
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	145	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	72	21_100_R.jpg	21	different	100	32	different	1	192
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	147	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	73	35_50.jpg	35	same	50	32	different	0	116
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	149	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	74	46_0.jpg	46	same	0	32	different	0	165
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	151	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	75	46_150.jpg	46	same	150	32	different	0	115
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	153	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	76	13_50_R.jpg	13	different	50	32	different	1	4
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	155	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	77	39_0.jpg	39	same	0	32	different	0	208
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	157	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	78	35_50_R.jpg	35	different	50	32	different	1	188
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	159	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	79	6_150.jpg	6	same	150	32	different	0	169
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	161	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	80	6_50.jpg	6	same	50	32	different	0	160
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	163	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	81	30_100.jpg	30	same	100	32	different	0	94
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	165	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	82	5_0_R.jpg	5	different	0	32	different	1	126
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	167	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	83	29_100.jpg	29	same	100	32	different	0	103
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	169	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	84	19_100_R.jpg	19	different	100	32	different	1	103
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	171	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	85	29_150.jpg	29	same	150	32	different	0	72
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	173	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	86	23_150_R.jpg	23	different	150	32	different	1	50
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	175	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	87	48_50_R.jpg	48	different	50	32	different	1	85
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	177	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	88	13_0.jpg	13	same	0	32	different	0	55
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	179	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	89	48_100.jpg	48	same	100	32	different	0	74
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	181	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	90	39_100.jpg	39	same	100	32	different	0	67
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	183	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	91	39_100_R.jpg	39	different	100	32	different	1	54
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	185	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	92	23_150.jpg	23	same	150	32	different	0	25
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	187	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	93	21_150.jpg	21	same	150	32	different	0	52
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	189	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	94	48_150_R.jpg	48	different	150	32	different	1	55
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	different	191	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	95	29_100_R.jpg	29	different	100	32	different	1	106
+6.3.5	win	2021-03-03	23:05:21	111	1	1	mentalrotation	3	same	193	29;48;39;5;19;21;6;23;46;30;13;35;	16;44;	96	6_100.jpg	6	same	100	32	different	0	99

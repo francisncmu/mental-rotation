@@ -1,0 +1,1628 @@
+﻿<usermanual>
+___________________________________________________________________________________________________________________	
+
+										Mental Rotation 
+___________________________________________________________________________________________________________________	
+
+Script Author: Katja Borchert, Ph.D. (katjab@millisecond.com) for Millisecond Software, LLC
+Date: 07-10-2018
+last updated:  03-16-2020 by K. Borchert (katjab@millisecond.com) for Millisecond Software, LLC
+
+Script Copyright © 03-16-2020 Millisecond Software
+
+___________________________________________________________________________________________________________________
+BACKGROUND INFO 	
+___________________________________________________________________________________________________________________
+This script implements a Mental Rotation Testing Procedure based on:
+
+Ganis, G and Kievit, R (2015). A New Set of Three-Dimensional Shapes for Investigating Mental Rotation Processes: 
+Validation Data and Stimulus Set. Journal of Open Psychology Data, 3: e3, DOI: http://dx.doi.org/10.5334/jopd.ai
+
+___________________________________________________________________________________________________________________
+TASK DESCRIPTION	
+___________________________________________________________________________________________________________________
+Participants see images of two 3-D cube objects and have to decide whether the cube objects are the same or mirror
+images of each other. The cube objects are rotated by 0deg, 50deg, 100deg, and 150deg.
+By default, in this script participants work on 12 different cube objects 
+(96 trials total = 12 cube objects * 4 rotation angles * 2 sameness categories (same vs. mirror images))
+
+___________________________________________________________________________________________________________________	
+DURATION 
+___________________________________________________________________________________________________________________	
+the default set-up of the script takes appr. 6-7 minutes to complete 
+(depends on response times; by default participants have max. 7.5s to respond during the test)
+
+___________________________________________________________________________________________________________________	
+DATA FILE INFORMATION 
+___________________________________________________________________________________________________________________	
+The default data stored in the data files are:
+
+(1) Raw data file: 'mentalrotation_raw*.iqdat' (a separate file for each participant)*
+
+build:								The specific Inquisit version used (the 'build') that was run
+computer.platform:					the platform the script was run on (win/mac/ios/android)
+date, time, 						date and time script was run 
+subject, group, 					with the current subject/groupnumber
+script.sessionid:					with the current session id
+
+blockcode, blocknum:				the name and number of the current block (built-in Inquisit variable)
+trialcode, trialnum: 				the name and number of the currently recorded trial (built-in Inquisit variable)
+										Note: trialnum is a built-in Inquisit variable; it counts all trials run; even those
+										that do not store data to the data file such as feedback trials. Thus, trialnum 
+										may not reflect the number of main trials run per block. 
+ 
+values.subsets:						the selected subsets for the test (out of 48 possible)
+values.subsets_practice:			the selected subsets for practice 
+
+values.trialcount:					counts the number of trials run (resets after practice)
+stimulusitem:						the presented stimuli in order of trial presentation
+values.subset:						the subset the current image belongs to
+values.sameness:					"same" vs. "different"
+values.rotationAngle:				0, 50, 100, 150
+
+response:							the participant's response, scancode of response button
+										31 = S => same
+										32 = D => different
+										
+values.responseCategory:			"same", "different", "no respose"
+ACC:								accuracy of response: 1 = correct response; 0 = otherwise
+Latency: 							the response latency (in ms); measured from: onset of images until response is made or trial times out 
+
+
+(2) Summary data file: 'mentalrotation_summary*.iqdat' (a separate file for each participant)*
+
+computer.platform:					the platform the script was run on (win/mac/ios/android)
+script.startdate:					date script was run
+script.starttime:					time script was started
+script.subjectid:					assigned subject id number
+script.groupid:						assigned group id number
+script.sessionid:					assigned session id number
+script.elapsedtime:					time it took to run script (in ms); measured from onset to offset of script
+script.completed:					0 = script was not completed (prematurely aborted); 
+									1 = script was completed (all conditions run)
+
+values.subsets:						the selected subsets for the test (out of 48 possible)
+values.subsets_practice:			the selected subsets for practice 
+
+expressions.ACC_practice:			proportion correct performance across all practice trials
+expressions.ACC:					proportion correct across all test trials 
+expressions.RT:						mean response time (in ms) of correct responses across all test trials 
+
+expressions.ACC_same:				proportion correct of 'Same' test trials (across all rotation angles)
+expressions.RT_same:				mean response time (in ms) of correct responses to 'Same' test trials (across all rotation angles)
+expressions.ACC_different:			proportion correct of 'Different' test trials (across all rotation angles)
+expressions.RT_different:			mean response time (in ms) of correct responses to 'Different' test trials (across all rotation angles)
+
+expressions.ACC_0:					proportion correct of responses to images with rotation angle = 0 degrees (across Same/Different trials)
+expressions.RT_0:					mean response time (in ms) of correct responses to images with rotation angle = 0 degrees (across Same/Different trials)
+expressions.ACC_50:					proportion correct of responses to images with rotation angle = 50 degrees (across Same/Different trials)
+expressions.RT_50:					mean response time (in ms) of correct responses to images with rotation angle = 50 degrees (across Same/Different trials)
+expressions.ACC_100:				proportion correct of responses to images with rotation angle = 100 degrees (across Same/Different trials)
+expressions.RT_100:					mean response time (in ms) of correct responses to images with rotation angle = 100 degrees (across Same/Different trials)
+expressions.ACC_150:				proportion correct of responses to images with rotation angle = 150 degrees (across Same/Different trials)
+expressions.RT_150:					mean response time (in ms) of correct responses to images with rotation angle = 150 degrees (across Same/Different trials)
+
+expressions.ACC_0_same:				proportion correct of responses to images with rotation angle = 0 degrees for 'Same' images
+expressions.RT_0_same:				mean response time (in ms) of correct responses to images with rotation angle = 0 degrees for 'Same' images
+expressions.ACC_50_same:			proportion correct of responses to images with rotation angle = 50 degrees for 'Same' images
+expressions.RT_50_same:				mean response time (in ms) of correct responses to images with rotation angle = 50 degrees for 'Same' images
+expressions.ACC_100_same:			proportion correct of responses to images with rotation angle = 100 degrees for 'Same' images
+expressions.RT_100_same:			mean response time (in ms) of correct responses to images with rotation angle = 100 degrees for 'Same' images
+expressions.ACC_150_same:			proportion correct of responses to images with rotation angle = 150 degrees for 'Same' images
+expressions.RT_1500_same:			mean response time (in ms) of correct responses to images with rotation angle = 150 degrees for 'Same' images
+
+expressions.ACC_0_different:		proportion correct of responses to images with rotation angle = 0 degrees for 'different' images
+expressions.RT_0_different:			mean response time (in ms) of correct responses to images with rotation angle = 0 degrees for 'different' images
+expressions.ACC_50_different:		proportion correct of responses to images with rotation angle = 50 degrees for 'different' images
+expressions.RT_50_different:		mean response time (in ms) of correct responses to images with rotation angle = 50 degrees for 'different' images
+expressions.ACC_100_different:		proportion correct of responses to images with rotation angle = 100 degrees for 'different' images
+expressions.RT_100_different:		mean response time (in ms) of correct responses to images with rotation angle = 100 degrees for 'different' images
+expressions.ACC_150_different:		proportion correct of responses to images with rotation angle = 150 degrees for 'different' images
+expressions.RT_1500_different:		mean response time (in ms) of correct responses to images with rotation angle = 150 degrees for 'different' images
+
+* separate data files: to change to one data file for all participants (on Inquisit Lab only), go to section
+"DATA" and follow further instructions
+
+___________________________________________________________________________________________________________________	
+EXPERIMENTAL SET-UP 
+___________________________________________________________________________________________________________________	
+
+(1) subsetGeneration ('silent block'):
+the script randomly selects the number of image subsets (out of 48 possible) as specified by 
+parameters.subsetSize. By default, the script randomly selects the subsets for the test.
+If specific subsets should be used, go to section EDITABLE LISTS and follow instructions.
+Once the test subsets have been selected, the script randomly selects 2 more subsets as practice subsets
+(Note: this is only possible if not all subsets have been used for the test)
+
+(2) Practice: 16 trials = 2 subsets x 8 images per subset
+- images are presented randomly to the participants
+- feedback is provided after each trial
+
+(3) Test: number of subsets x 8 images per subset => default: 12 x 8 = 96 trials
+- half the images are 'same', half the images are 'different' 
+- the images are presented randomly with the constraint that no more than 3 same/different are
+run consecutively
+- no feedback provided
+- after every 48 trials (editable, see parameters.restTrial under section EDITABLE PARAMETERS)
+participants get a break
+
+Trial Sequence:
+ITI (250ms, editable)-> images for max 7500ms (editable) -> ITI
+
+___________________________________________________________________________________________________________________
+STIMULI
+___________________________________________________________________________________________________________________
+provided by: Ganis, G and Kievit, R (2015) (see article for stimuli generation)
+The images are white on a black background.
+Sizing can be edited under section EDITABLE PARAMETERS
+
+___________________________________________________________________________________________________________________	
+INSTRUCTIONS 
+___________________________________________________________________________________________________________________
+provided by Millisecond Software - can be edited under section Editable Instructions
+
+___________________________________________________________________________________________________________________	
+EDITABLE CODE 
+___________________________________________________________________________________________________________________	
+check below for (relatively) easily editable parameters, stimuli, instructions etc. 
+Keep in mind that you can use this script as a template and therefore always "mess" with the entire code 
+to further customize your experiment.
+
+The parameters you can change are:
+
+/subsetSize:							the number of subsets used for the test (default: 12; Max: 48).
+										By default, the script randomly selects the subsets for the test.
+										If specific subsets should be used, go to section LISTS and follow
+										instructions.
+										
+										Note: the script uses 2 different subsets for practice as long
+										as not all 48 subsets are needed for the test.
+										
+/restTrial:								by default, every 48 trials the script provides a rest trial 
+										
+/picSize:								proportional size of images (relative to canvas height) (default: 40%)
+
+/iti:									the intertrial interval in ms (blank screen) before each new image (default: 250ms)
+/responseTimeout:						the response Timeout in ms (default: 7500ms)
+										By default, the trial terminates after 7500ms
+										
+Response Keys:									
+/responsekey_same:						the 'same' response key  (default: "S"); left response key
+/responsekey_different:					the 'different' response key  (default: "D"); right response key
+										
+										Note: the 'same' response key will be presented as the left
+										response key on touchscreen devices; thus it is recommended to use
+										a 'same' key that appears to the left of the 'different' response key
+										on the keyboard as well.
+
+</usermanual>
+
+
+**************************************************************************************************************
+**************************************************************************************************************
+	EDITABLE PARAMETERS: change editable parameters here
+**************************************************************************************************************
+**************************************************************************************************************
+
+<parameters>
+/subsetSize = 12
+/restTrial = 48
+/picSize = 40%
+
+/iti = 250
+/responseTimeout = 7500
+
+/responsekey_same = "S"
+/responsekey_different = "D"
+</parameters>
+
+**************************************************************************************************************
+**************************************************************************************************************
+	EDITABLE STIMULI
+**************************************************************************************************************
+**************************************************************************************************************
+
+48 images x 4 different rotations (0, 50, 100, 150) x 2 levels of sameness (same vs. mirror) = 384 stimuli
+images containing "R" -> mirror images (all even numbered images)
+
+<item images>
+/1="1_0.jpg"
+/2="1_0_R.jpg"
+/3="1_100.jpg"
+/4="1_100_R.jpg"
+/5="1_150.jpg"
+/6="1_150_R.jpg"
+/7="1_50.jpg"
+/8="1_50_R.jpg"
+/9="2_0.jpg"
+/10="2_0_R.jpg"
+/11="2_100.jpg"
+/12="2_100_R.jpg"
+/13="2_150.jpg"
+/14="2_150_R.jpg"
+/15="2_50.jpg"
+/16="2_50_R.jpg"
+/17="3_0.jpg"
+/18="3_0_R.jpg"
+/19="3_100.jpg"
+/20="3_100_R.jpg"
+/21="3_150.jpg"
+/22="3_150_R.jpg"
+/23="3_50.jpg"
+/24="3_50_R.jpg"
+/25="4_0.jpg"
+/26="4_0_R.jpg"
+/27="4_100.jpg"
+/28="4_100_R.jpg"
+/29="4_150.jpg"
+/30="4_150_R.jpg"
+/31="4_50.jpg"
+/32="4_50_R.jpg"
+/33="5_0.jpg"
+/34="5_0_R.jpg"
+/35="5_100.jpg"
+/36="5_100_R.jpg"
+/37="5_150.jpg"
+/38="5_150_R.jpg"
+/39="5_50.jpg"
+/40="5_50_R.jpg"
+/41="6_0.jpg"
+/42="6_0_R.jpg"
+/43="6_100.jpg"
+/44="6_100_R.jpg"
+/45="6_150.jpg"
+/46="6_150_R.jpg"
+/47="6_50.jpg"
+/48="6_50_R.jpg"
+/49="7_0.jpg"
+/50="7_0_R.jpg"
+/51="7_100.jpg"
+/52="7_100_R.jpg"
+/53="7_150.jpg"
+/54="7_150_R.jpg"
+/55="7_50.jpg"
+/56="7_50_R.jpg"
+/57="8_0.jpg"
+/58="8_0_R.jpg"
+/59="8_100.jpg"
+/60="8_100_R.jpg"
+/61="8_150.jpg"
+/62="8_150_R.jpg"
+/63="8_50.jpg"
+/64="8_50_R.jpg"
+/65="9_0.jpg"
+/66="9_0_R.jpg"
+/67="9_100.jpg"
+/68="9_100_R.jpg"
+/69="9_150.jpg"
+/70="9_150_R.jpg"
+/71="9_50.jpg"
+/72="9_50_R.jpg"
+/73="10_0.jpg"
+/74="10_0_R.jpg"
+/75="10_100.jpg"
+/76="10_100_R.jpg"
+/77="10_150.jpg"
+/78="10_150_R.jpg"
+/79="10_50.jpg"
+/80="10_50_R.jpg"
+/81="11_0.jpg"
+/82="11_0_R.jpg"
+/83="11_100.jpg"
+/84="11_100_R.jpg"
+/85="11_150.jpg"
+/86="11_150_R.jpg"
+/87="11_50.jpg"
+/88="11_50_R.jpg"
+/89="12_0.jpg"
+/90="12_0_R.jpg"
+/91="12_100.jpg"
+/92="12_100_R.jpg"
+/93="12_150.jpg"
+/94="12_150_R.jpg"
+/95="12_50.jpg"
+/96="12_50_R.jpg"
+/97="13_0.jpg"
+/98="13_0_R.jpg"
+/99="13_100.jpg"
+/100="13_100_R.jpg"
+/101="13_150.jpg"
+/102="13_150_R.jpg"
+/103="13_50.jpg"
+/104="13_50_R.jpg"
+/105="14_0.jpg"
+/106="14_0_R.jpg"
+/107="14_100.jpg"
+/108="14_100_R.jpg"
+/109="14_150.jpg"
+/110="14_150_R.jpg"
+/111="14_50.jpg"
+/112="14_50_R.jpg"
+/113="15_0.jpg"
+/114="15_0_R.jpg"
+/115="15_100.jpg"
+/116="15_100_R.jpg"
+/117="15_150.jpg"
+/118="15_150_R.jpg"
+/119="15_50.jpg"
+/120="15_50_R.jpg"
+/121="16_0.jpg"
+/122="16_0_R.jpg"
+/123="16_100.jpg"
+/124="16_100_R.jpg"
+/125="16_150.jpg"
+/126="16_150_R.jpg"
+/127="16_50.jpg"
+/128="16_50_R.jpg"
+/129="17_0.jpg"
+/130="17_0_R.jpg"
+/131="17_100.jpg"
+/132="17_100_R.jpg"
+/133="17_150.jpg"
+/134="17_150_R.jpg"
+/135="17_50.jpg"
+/136="17_50_R.jpg"
+/137="18_0.jpg"
+/138="18_0_R.jpg"
+/139="18_100.jpg"
+/140="18_100_R.jpg"
+/141="18_150.jpg"
+/142="18_150_R.jpg"
+/143="18_50.jpg"
+/144="18_50_R.jpg"
+/145="19_0.jpg"
+/146="19_0_R.jpg"
+/147="19_100.jpg"
+/148="19_100_R.jpg"
+/149="19_150.jpg"
+/150="19_150_R.jpg"
+/151="19_50.jpg"
+/152="19_50_R.jpg"
+/153="20_0.jpg"
+/154="20_0_R.jpg"
+/155="20_100.jpg"
+/156="20_100_R.jpg"
+/157="20_150.jpg"
+/158="20_150_R.jpg"
+/159="20_50.jpg"
+/160="20_50_R.jpg"
+/161="21_0.jpg"
+/162="21_0_R.jpg"
+/163="21_100.jpg"
+/164="21_100_R.jpg"
+/165="21_150.jpg"
+/166="21_150_R.jpg"
+/167="21_50.jpg"
+/168="21_50_R.jpg"
+/169="22_0.jpg"
+/170="22_0_R.jpg"
+/171="22_100.jpg"
+/172="22_100_R.jpg"
+/173="22_150.jpg"
+/174="22_150_R.jpg"
+/175="22_50.jpg"
+/176="22_50_R.jpg"
+/177="23_0.jpg"
+/178="23_0_R.jpg"
+/179="23_100.jpg"
+/180="23_100_R.jpg"
+/181="23_150.jpg"
+/182="23_150_R.jpg"
+/183="23_50.jpg"
+/184="23_50_R.jpg"
+/185="24_0.jpg"
+/186="24_0_R.jpg"
+/187="24_100.jpg"
+/188="24_100_R.jpg"
+/189="24_150.jpg"
+/190="24_150_R.jpg"
+/191="24_50.jpg"
+/192="24_50_R.jpg"
+/193="25_0.jpg"
+/194="25_0_R.jpg"
+/195="25_100.jpg"
+/196="25_100_R.jpg"
+/197="25_150.jpg"
+/198="25_150_R.jpg"
+/199="25_50.jpg"
+/200="25_50_R.jpg"
+/201="26_0.jpg"
+/202="26_0_R.jpg"
+/203="26_100.jpg"
+/204="26_100_R.jpg"
+/205="26_150.jpg"
+/206="26_150_R.jpg"
+/207="26_50.jpg"
+/208="26_50_R.jpg"
+/209="27_0.jpg"
+/210="27_0_R.jpg"
+/211="27_100.jpg"
+/212="27_100_R.jpg"
+/213="27_150.jpg"
+/214="27_150_R.jpg"
+/215="27_50.jpg"
+/216="27_50_R.jpg"
+/217="28_0.jpg"
+/218="28_0_R.jpg"
+/219="28_100.jpg"
+/220="28_100_R.jpg"
+/221="28_150.jpg"
+/222="28_150_R.jpg"
+/223="28_50.jpg"
+/224="28_50_R.jpg"
+/225="29_0.jpg"
+/226="29_0_R.jpg"
+/227="29_100.jpg"
+/228="29_100_R.jpg"
+/229="29_150.jpg"
+/230="29_150_R.jpg"
+/231="29_50.jpg"
+/232="29_50_R.jpg"
+/233="30_0.jpg"
+/234="30_0_R.jpg"
+/235="30_100.jpg"
+/236="30_100_R.jpg"
+/237="30_150.jpg"
+/238="30_150_R.jpg"
+/239="30_50.jpg"
+/240="30_50_R.jpg"
+/241="31_0.jpg"
+/242="31_0_R.jpg"
+/243="31_100.jpg"
+/244="31_100_R.jpg"
+/245="31_150.jpg"
+/246="31_150_R.jpg"
+/247="31_50.jpg"
+/248="31_50_R.jpg"
+/249="32_0.jpg"
+/250="32_0_R.jpg"
+/251="32_100.jpg"
+/252="32_100_R.jpg"
+/253="32_150.jpg"
+/254="32_150_R.jpg"
+/255="32_50.jpg"
+/256="32_50_R.jpg"
+/257="33_0.jpg"
+/258="33_0_R.jpg"
+/259="33_100.jpg"
+/260="33_100_R.jpg"
+/261="33_150.jpg"
+/262="33_150_R.jpg"
+/263="33_50.jpg"
+/264="33_50_R.jpg"
+/265="34_0.jpg"
+/266="34_0_R.jpg"
+/267="34_100.jpg"
+/268="34_100_R.jpg"
+/269="34_150.jpg"
+/270="34_150_R.jpg"
+/271="34_50.jpg"
+/272="34_50_R.jpg"
+/273="35_0.jpg"
+/274="35_0_R.jpg"
+/275="35_100.jpg"
+/276="35_100_R.jpg"
+/277="35_150.jpg"
+/278="35_150_R.jpg"
+/279="35_50.jpg"
+/280="35_50_R.jpg"
+/281="36_0.jpg"
+/282="36_0_R.jpg"
+/283="36_100.jpg"
+/284="36_100_R.jpg"
+/285="36_150.jpg"
+/286="36_150_R.jpg"
+/287="36_50.jpg"
+/288="36_50_R.jpg"
+/289="37_0.jpg"
+/290="37_0_R.jpg"
+/291="37_100.jpg"
+/292="37_100_R.jpg"
+/293="37_150.jpg"
+/294="37_150_R.jpg"
+/295="37_50.jpg"
+/296="37_50_R.jpg"
+/297="38_0.jpg"
+/298="38_0_R.jpg"
+/299="38_100.jpg"
+/300="38_100_R.jpg"
+/301="38_150.jpg"
+/302="38_150_R.jpg"
+/303="38_50.jpg"
+/304="38_50_R.jpg"
+/305="39_0.jpg"
+/306="39_0_R.jpg"
+/307="39_100.jpg"
+/308="39_100_R.jpg"
+/309="39_150.jpg"
+/310="39_150_R.jpg"
+/311="39_50.jpg"
+/312="39_50_R.jpg"
+/313="40_0.jpg"
+/314="40_0_R.jpg"
+/315="40_100.jpg"
+/316="40_100_R.jpg"
+/317="40_150.jpg"
+/318="40_150_R.jpg"
+/319="40_50.jpg"
+/320="40_50_R.jpg"
+/321="41_0.jpg"
+/322="41_0_R.jpg"
+/323="41_100.jpg"
+/324="41_100_R.jpg"
+/325="41_150.jpg"
+/326="41_150_R.jpg"
+/327="41_50.jpg"
+/328="41_50_R.jpg"
+/329="42_0.jpg"
+/330="42_0_R.jpg"
+/331="42_100.jpg"
+/332="42_100_R.jpg"
+/333="42_150.jpg"
+/334="42_150_R.jpg"
+/335="42_50.jpg"
+/336="42_50_R.jpg"
+/337="43_0.jpg"
+/338="43_0_R.jpg"
+/339="43_100.jpg"
+/340="43_100_R.jpg"
+/341="43_150.jpg"
+/342="43_150_R.jpg"
+/343="43_50.jpg"
+/344="43_50_R.jpg"
+/345="44_0.jpg"
+/346="44_0_R.jpg"
+/347="44_100.jpg"
+/348="44_100_R.jpg"
+/349="44_150.jpg"
+/350="44_150_R.jpg"
+/351="44_50.jpg"
+/352="44_50_R.jpg"
+/353="45_0.jpg"
+/354="45_0_R.jpg"
+/355="45_100.jpg"
+/356="45_100_R.jpg"
+/357="45_150.jpg"
+/358="45_150_R.jpg"
+/359="45_50.jpg"
+/360="45_50_R.jpg"
+/361="46_0.jpg"
+/362="46_0_R.jpg"
+/363="46_100.jpg"
+/364="46_100_R.jpg"
+/365="46_150.jpg"
+/366="46_150_R.jpg"
+/367="46_50.jpg"
+/368="46_50_R.jpg"
+/369="47_0.jpg"
+/370="47_0_R.jpg"
+/371="47_100.jpg"
+/372="47_100_R.jpg"
+/373="47_150.jpg"
+/374="47_150_R.jpg"
+/375="47_50.jpg"
+/376="47_50_R.jpg"
+/377="48_0.jpg"
+/378="48_0_R.jpg"
+/379="48_100.jpg"
+/380="48_100_R.jpg"
+/381="48_150.jpg"
+/382="48_150_R.jpg"
+/383="48_50.jpg"
+/384="48_50_R.jpg"
+</item>
+
+<item practiceFeedback>
+/1 = "Correct!"
+/2 = "Incorrect."
+/3 = "Please, respond faster."
+</item>
+
+<expressions>
+/sameFeedback = if (values.sameness == "same") {
+	"the SAME";
+} else {
+	"MIRROR images"
+}
+/rotationAngleFeedback = if (values.rotationAngle != 0){
+	" rotated by <%values.rotationAngle%> degrees"
+}
+</expressions>
+
+
+**************************************************************************************************************
+**************************************************************************************************************
+	EDITABLE INSTRUCTIONS: change instructions here
+**************************************************************************************************************
+**************************************************************************************************************
+<instruct>
+/ fontstyle = ("Arial", 3.5%, true, false, false, false, 5, 1)
+</instruct>
+
+<htmlpage intro>
+/ file = "mentalrotation.htm"
+</htmlpage>
+
+<htmlpage intro2>
+/ file = "mentalrotation2.htm"
+</htmlpage>
+
+<htmlpage intro3>
+/ file = "mentalrotation3.htm"
+</htmlpage>
+
+<htmlpage testStart>
+/ file = "mentalrotation4.htm"
+</htmlpage>
+
+
+<text break>
+/ items = ("Take a break")
+/ fontstyle = ("Arial", 8%, true, false, false, false, 5, 1)
+/ position = (50%, 50%)
+/ size = (80%, 10%)
+/ vjustify = center
+</text>
+
+
+<text finish>
+/ items = ("Thank you!")
+/ fontstyle = ("Arial", 8%, true, false, false, false, 5, 1)
+/ position = (50%, 50%)
+/ size = (80%, 80%)
+/ vjustify = center
+</text>
+
+<text continue>
+/ items = ("<press spacebar to continue>")
+/ fontstyle = ("Courier New", 2.5%, false, false, false, false, 5, 1)
+/ position = (50%, 90%)
+/ size = (80%, 5%)
+/ vjustify = center
+/ txcolor = gray
+</text>
+
+<text exit>
+/ items = ("<press spacebar to exit>")
+/ fontstyle = ("Arial", 3%, false, false, false, false, 5, 1)
+/ position = (50%, 90%)
+/ size = (80%, 5%)
+/ vjustify = center
+</text>
+
+<text ResponseKeyReminder>
+/ items = (
+"Same: Press S
+Different: Press D")
+/ fontstyle = ("Courier New", 3%, false, false, false, false, 5, 1)
+/ position = (50%, 90%)
+/ size = (80%, 6%)
+/ vjustify = center
+/ txcolor = gray
+</text>
+
+
+*******************************
+General Helper Instructions
+******************************
+
+<text getReady>
+/ items = ("Get Ready:
+~n<%expressions.buttoninstruct1%>")
+/ fontstyle = ("Arial", 3.00%, false, false, false, false, 5, 1)
+/ size = (80%, 40%)
+</text>
+
+****************************************************************************************************
+general instruction expressions: adjust the instruction text depending on device used to run script
+****************************************************************************************************
+<expressions>
+/buttoninstruct1 = if (computer.touch && !computer.haskeyboard) {"on the bottom of your screen";} else {"on your keyboard";}
+</expressions>
+
+
+**************************************************************************************************************
+**************************************************************************************************************
+	EDITABLE LISTS: change editable lists here
+**************************************************************************************************************
+**************************************************************************************************************
+
+Note: this list is used to select the number of subsets as specified by parameters.subsetSize
+<list subsets>
+/ poolsize = 48
+/ replace = false
+/ resetinterval = 0
+</list>
+
+Note: if the subsets should be selected in sequence: use
+/selectionmode = sequence instead of /replace = false
+
+if specific subsets should be used, either
+a) rearrange 'item.images' (under section EDITABLE STIMULI) accordingly and then use sequential selection OR
+b) use a set up similar to
+
+list subsets>
+/items = (1, 3, 4, 6, 8, 9, 12, 15) <= specify your subsets here
+/ replace = false
+/ resetinterval = 0
+</list>
+
+and change 'list.subsets.nextindex' to 'list.subsets.nextvalue' under trials.subsetGeneration and 
+trials.subsetGeneration_practice
+
+
+**************************************************************************************************************
+				!!!REMAINING CODE: Customize after careful consideration only!!!
+**************************************************************************************************************
+
+
+**************************************************************************************************************
+**************************************************************************************************************
+	DEFAULTS
+**************************************************************************************************************
+**************************************************************************************************************
+script requires Inquisit 6.1.0.0 or higher
+
+<defaults>
+/canvasaspectratio = (4,3)
+/minimumversion = "6.1.0.0"
+/ fontstyle = ("Arial", 3%, false, false, false, false, 5, 1)
+/txbgcolor = black
+/ txcolor = white
+/ screencolor = black
+</defaults>
+
+**************************************************************************************************************
+**************************************************************************************************************
+	DATA
+**************************************************************************************************************
+**************************************************************************************************************
+
+Note: data file explanations under User Manual Information at the top
+
+To change from one data file per participant to one data file for all participants, set
+/separatefiles = false
+
+***********************
+raw data file
+***********************
+<data>
+/ columns = (build, computer.platform, date, time, subject, group, script.sessionid, blockcode, blocknum, 
+trialcode, trialnum,
+values.subsets, values.subsets_practice, 
+values.trialcount,
+stimulusitem, values.subset, values.sameness, values.rotationAngle, 
+response, values.responseCategory, correct, latency)
+</data>
+
+***********************
+summary data file
+***********************
+<summarydata>
+/ columns = (computer.platform, script.startdate, script.starttime, script.subjectid, script.groupid, script.sessionid, script.elapsedtime, 
+script.completed,
+values.subsets, values.subsets_practice,
+
+expressions.ACC_practice,
+expressions.ACC, expressions.RT,
+
+expressions.ACC_same, expressions.RT_same,
+expressions.ACC_different, expressions.RT_different,
+
+expressions.ACC_0, expressions.RT_0,
+expressions.ACC_50, expressions.RT_50,
+expressions.ACC_100, expressions.RT_100,
+expressions.ACC_150, expressions.RT_150,
+
+expressions.ACC_0_same, expressions.RT_0_same,
+expressions.ACC_50_same, expressions.RT_50_same,
+expressions.ACC_100_same, expressions.RT_100_same,
+expressions.ACC_150_same, expressions.RT_150_same,
+
+expressions.ACC_0_different, expressions.RT_0_different,
+expressions.ACC_50_different, expressions.RT_50_different,
+expressions.ACC_100_different, expressions.RT_100_different,
+expressions.ACC_150_different, expressions.RT_150_different,
+)
+</summarydata>
+
+
+**************************************************************************************************************
+**************************************************************************************************************
+	VALUES: automatically updated
+**************************************************************************************************************
+**************************************************************************************************************
+                                    
+<values>
+/countSubsets = 0
+/subset = 0
+/index = 0
+/subsets = ""
+/subsets_practice = ""
+
+/rotationAngle = 0
+/sameness = 0
+
+/trialcount = 0
+/selectFeedback = 3
+
+/filename = ""
+
+/responseCategory = ""
+</values>
+
+**************************************************************************************************************
+**************************************************************************************************************
+	EXPRESSIONS
+**************************************************************************************************************
+**************************************************************************************************************
+
+<expressions>
+/numberOfTrials = parameters.subsetSize * 8
+
+/ACC_practice = list.ACC_practice.mean
+
+/ACC = list.ACC.mean
+/RT = list.RT.mean
+
+/ACC_same = list.ACC_same.mean
+/RT_same = list.RT_same.mean
+/ACC_different = list.ACC_different.mean
+/RT_different = list.RT_different.mean
+
+/ACC_0 = list.ACC_0.mean
+/RT_0 = list.RT_0.mean
+/ACC_50 = list.ACC_50.mean
+/RT_50 = list.RT_50.mean
+/ACC_100 = list.ACC_100.mean
+/RT_100 = list.RT_100.mean
+/ACC_150 = list.ACC_150.mean
+/RT_150 = list.RT_150.mean
+
+/ACC_0_same = list.ACC_0_same.mean
+/RT_0_same = list.RT_0_same.mean
+/ACC_50_same = list.ACC_50_same.mean
+/RT_50_same = list.RT_50_same.mean
+/ACC_100_same = list.ACC_100_same.mean
+/RT_100_same = list.RT_100_same.mean
+/ACC_150_same = list.ACC_150_same.mean
+/RT_150_same = list.RT_150_same.mean
+
+/ACC_0_different = list.ACC_0_different.mean
+/RT_0_different = list.RT_0_different.mean
+/ACC_50_different = list.ACC_50_different.mean
+/RT_50_different = list.RT_50_different.mean
+/ACC_100_different = list.ACC_100_different.mean
+/RT_100_different = list.RT_100_different.mean
+/ACC_150_different = list.ACC_150_different.mean
+/RT_150_different = list.RT_150_different.mean
+
+</expressions>
+
+
+**************************************************************************************************************
+**************************************************************************************************************
+	INSTRUCTIONS
+**************************************************************************************************************
+**************************************************************************************************************
+
+
+<trial finish>
+/ stimulusframes = [1 = finish, exit]
+/ validresponse = (" ")
+/ recorddata = false
+</trial>
+
+*************************************
+General Helper Instruction Trials/Blocks
+*************************************
+
+This trial is used when participants are asked to place their fingers on specific response
+buttons. On the touchscreen, this trial presents the (inactive) response buttons to the participants.
+trial getReady>
+/ stimulusframes = [1 = getReady]
+/ trialduration = parameters.readyDuration
+/ validresponse = (parameters.responsekey1, parameters.responsekey2, parameters.responsekey3, parameters.responsekey4)
+/ beginresponsetime = parameters.readyDuration
+/ errormessage = false
+/ recorddata = false
+</trial>
+
+**************************************************************************************************************
+**************************************************************************************************************
+	STIMULI
+**************************************************************************************************************
+**************************************************************************************************************
+
+
+Note: item.same is created on the fly by trial.subsetGeneration
+and contains as many items as dictated by parameters.subsetSize
+<item same>
+</item>
+
+<picture same>
+/ items = same
+/ select = noreplace
+/ size = (parameters.picSize, parameters.picSize)
+/ position = (50%, 50%)
+/ resetinterval = 0
+</picture>
+
+Note: item.different is created on the fly by trial.subsetGeneration
+and contains as many items as dictated by parameters.subsetSize
+<item different>
+</item>
+
+<picture different>
+/ items = different
+/ select = noreplace
+/ size = (parameters.picSize, parameters.picSize)
+/ position = (50%, 50%)
+/ resetinterval = 0
+</picture>
+
+Note: item.same_practice is created on the fly by trial.subsetGeneration_practice
+<item same_practice>
+</item>
+
+<picture same_practice>
+/ items = same_practice
+/ select = noreplace
+/ size = (parameters.picSize, parameters.picSize)
+/ position = (50%, 50%)
+/ resetinterval = 0
+/ erase = false
+</picture>
+
+Note: item.different_practice is created on the fly by trial.subsetGeneration_practice
+<item different_practice>
+</item>
+
+<picture different_practice>
+/ items = different_practice
+/ select = noreplace
+/ size = (parameters.picSize, parameters.picSize)
+/ position = (50%, 50%)
+/ resetinterval = 0
+/ erase = false
+</picture>
+
+<text feedback1>
+/ onprepare = [
+	if (values.selectFeedback == 1){
+		text.feedback1.textcolor = greenyellow;
+	} else {
+		text.feedback1.textcolor = red;
+	};
+]
+/ items = practiceFeedback
+/ select = values.selectFeedback
+/ position = (50%, 30%)
+/ fontstyle = ("Arial", 5%, true, false, false, false, 5, 1)
+/ size = (80%, 15%)
+/ vjustify = center
+</text>
+
+<text feedback2>
+/ items = ("These images are <%expressions.sameFeedback%><%expressions.rotationAngleFeedback%>.")
+/ position = (50%, 68%)
+/ fontstyle = ("Arial", 3%, true, false, false, false, 5, 1)
+/ size = (80%, 5%)
+/ vjustify = center
+</text>
+
+**************************************************************************************************************
+**************************************************************************************************************
+	LISTS	
+**************************************************************************************************************
+**************************************************************************************************************
+
+Note: list.nexttrial controls the selection of trials.same/different.
+The trials are selected randomly without replacement with the constraint that
+no more than 3 trials of the same kind should be run consecutively.
+The poolsize of the list is dynamically calculated at the EXPT-level
+and is dependent on parameters.subsetSize
+<list nexttrial>
+/ items = (1, 2)
+/ replace = false
+/ maxrunsize = 3
+/ resetinterval = 0
+/ poolsize = expressions.numberOfTrials
+</list>
+
+*************************************************
+Data Lists: used for descriptive statistics
+store correct latencies/accuracy data
+fill up during runtime
+*************************************************
+
+Note: list stores 1 = correct response; 0 = incorrect response for each relevant trial
+any response coded as an error is automatically coded as 0
+<list ACC_practice>
+</list>
+
+Note: list stores 1 = correct response; 0 = incorrect response for each relevant trial
+any response coded as an error is automatically coded as 0
+<list ACC>
+</list>
+
+Note: list stores the latency of correct responses for each relevant trial
+<list RT>
+</list>
+
+Note: list stores 1 = correct response; 0 = incorrect response for each relevant trial
+any response coded as an error is automatically coded as 0
+<list ACC_same>
+</list>
+
+Note: list stores the latency of correct responses for each relevant trial
+<list RT_same>
+</list>
+
+Note: list stores 1 = correct response; 0 = incorrect response for each relevant trial
+any response coded as an error is automatically coded as 0
+<list ACC_different>
+</list>
+
+Note: list stores the latency of correct responses for each relevant trial
+<list RT_different>
+</list>
+
+
+Note: list stores 1 = correct response; 0 = incorrect response for each relevant trial
+any response coded as an error is automatically coded as 0
+<list ACC_0>
+</list>
+
+Note: list stores the latency of correct responses for each relevant trial
+<list RT_0>
+</list>
+
+Note: list stores 1 = correct response; 0 = incorrect response for each relevant trial
+any response coded as an error is automatically coded as 0
+<list ACC_50>
+</list>
+
+Note: list stores the latency of correct responses for each relevant trial
+<list RT_50>
+</list>
+
+Note: list stores 1 = correct response; 0 = incorrect response for each relevant trial
+any response coded as an error is automatically coded as 0
+<list ACC_100>
+</list>
+
+Note: list stores the latency of correct responses for each relevant trial
+<list RT_100>
+</list>
+
+Note: list stores 1 = correct response; 0 = incorrect response for each relevant trial
+any response coded as an error is automatically coded as 0
+<list ACC_150>
+</list>
+
+Note: list stores the latency of correct responses for each relevant trial
+<list RT_150>
+</list>
+
+Note: list stores 1 = correct response; 0 = incorrect response for each relevant trial
+any response coded as an error is automatically coded as 0
+<list ACC_0_same>
+</list>
+
+Note: list stores the latency of correct responses for each relevant trial
+<list RT_0_same>
+</list>
+
+Note: list stores 1 = correct response; 0 = incorrect response for each relevant trial
+any response coded as an error is automatically coded as 0
+<list ACC_50_same>
+</list>
+
+Note: list stores the latency of correct responses for each relevant trial
+<list RT_50_same>
+</list>
+
+Note: list stores 1 = correct response; 0 = incorrect response for each relevant trial
+any response coded as an error is automatically coded as 0
+<list ACC_100_same>
+</list>
+
+Note: list stores the latency of correct responses for each relevant trial
+<list RT_100_same>
+</list>
+
+Note: list stores 1 = correct response; 0 = incorrect response for each relevant trial
+any response coded as an error is automatically coded as 0
+<list ACC_150_same>
+</list>
+
+Note: list stores the latency of correct responses for each relevant trial
+<list RT_150_same>
+</list>
+
+Note: list stores 1 = correct response; 0 = incorrect response for each relevant trial
+any response coded as an error is automatically coded as 0
+<list ACC_0_different>
+</list>
+
+Note: list stores the latency of correct responses for each relevant trial
+<list RT_0_different>
+</list>
+
+Note: list stores 1 = correct response; 0 = incorrect response for each relevant trial
+any response coded as an error is automatically coded as 0
+<list ACC_50_different>
+</list>
+
+Note: list stores the latency of correct responses for each relevant trial
+<list RT_50_different>
+</list>
+
+Note: list stores 1 = correct response; 0 = incorrect response for each relevant trial
+any response coded as an error is automatically coded as 0
+<list ACC_100_different>
+</list>
+
+Note: list stores the latency of correct responses for each relevant trial
+<list RT_100_different>
+</list>
+
+Note: list stores 1 = correct response; 0 = incorrect response for each relevant trial
+any response coded as an error is automatically coded as 0
+<list ACC_150_different>
+</list>
+
+Note: list stores the latency of correct responses for each relevant trial
+<list RT_150_different>
+</list>
+
+**************************************************************************************************************
+**************************************************************************************************************
+	TRIALS: helper trials	
+**************************************************************************************************************
+**************************************************************************************************************
+
+<trial subsetGeneration>
+/ontrialbegin = [
+	values.countSubsets += 1;
+	values.subset = list.subsets.nextindex;
+	values.subsets = concat(values.subsets, values.subset);
+	values.subsets = concat(values.subsets, ";");
+	
+	values.index = (values.subset-1)*8 + 1;
+	item.same.appenditem(item.images.item(values.index));
+	values.index = (values.subset-1)*8 + 3;
+	item.same.appenditem(item.images.item(values.index));
+	values.index = (values.subset-1)*8 + 5;
+	item.same.appenditem(item.images.item(values.index));
+	values.index = (values.subset-1)*8 + 7;
+	item.same.appenditem(item.images.item(values.index));
+	
+	values.index = (values.subset-1)*8 + 2;
+	item.different.appenditem(item.images.item(values.index));
+	values.index = (values.subset-1)*8 + 4;
+	item.different.appenditem(item.images.item(values.index));
+	values.index = (values.subset-1)*8 + 6;
+	item.different.appenditem(item.images.item(values.index));
+	values.index = (values.subset-1)*8 + 8;
+	item.different.appenditem(item.images.item(values.index));		
+]
+/ trialduration = 0
+/ branch = [
+	if (values.countSubsets < parameters.subsetSize){
+		return trial.subsetGeneration;
+	} else {
+		values.countSubsets = 0;
+		return trial.subsetGeneration_practice;
+	};
+]
+/ recorddata = false
+</trial>
+
+<trial subsetGeneration_practice>
+/ontrialbegin = [
+	values.countSubsets += 1;
+	values.subset = list.subsets.nextindex;
+	values.subsets_practice = concat(values.subsets_practice, values.subset);
+	values.subsets_practice = concat(values.subsets_practice, ";");	
+	
+	values.index = (values.subset-1)*8 + 1;
+	item.same_practice.appenditem(item.images.item(values.index));
+	values.index = (values.subset-1)*8 + 3;
+	item.same_practice.appenditem(item.images.item(values.index));
+	values.index = (values.subset-1)*8 + 5;
+	item.same_practice.appenditem(item.images.item(values.index));
+	values.index = (values.subset-1)*8 + 7;
+	item.same_practice.appenditem(item.images.item(values.index));
+	
+	values.index = (values.subset-1)*8 + 2;
+	item.different_practice.appenditem(item.images.item(values.index));
+	values.index = (values.subset-1)*8 + 4;
+	item.different_practice.appenditem(item.images.item(values.index));	
+	values.index = (values.subset-1)*8 + 6;
+	item.different_practice.appenditem(item.images.item(values.index));
+	values.index = (values.subset-1)*8 + 8;
+	item.different_practice.appenditem(item.images.item(values.index));
+]
+/ trialduration = 0
+/ branch = [
+	if (values.countSubsets < 2){
+		trial.subsetGeneration_practice;
+	};
+]
+/ recorddata = false
+</trial>
+
+**************************************************************************************************************
+**************************************************************************************************************
+	PRACTICE TRIALS:
+**************************************************************************************************************
+**************************************************************************************************************
+
+<trial same_practice>
+/ ontrialbegin = [
+	values.trialcount += 1;
+	values.sameness = "same";
+]
+/ stimulusframes = [1 = same_practice, ResponseKeyReminder]
+/ validresponse = (parameters.responsekey_same, parameters.responsekey_different)
+/ correctresponse = (parameters.responsekey_same)
+/ beginresponsetime = 0
+/ response = timeout(parameters.responseTimeout)
+/ ontrialend = [
+	values.subset = substring(picture.same_practice.currentitem, 0, 2);
+	if (contains(values.subset, "_")){
+		values.subset = substring(values.subset, 0, 1);
+	};
+	values.rotationAngle = substring(picture.same_practice.currentitem, 3, 2);
+	if (contains(picture.same_practice.currentitem, "100")){
+		values.rotationAngle = 100;
+	} else if (contains(picture.same_practice.currentitem, "150")){
+		values.rotationAngle = 150;
+	} else if (contains(picture.same_practice.currentitem, "50")){
+		values.rotationAngle = 50;
+	} else {
+		values.rotationAngle = 0;
+	};
+
+	
+	if (trial.same_practice.correct){
+		values.selectFeedback = 1;
+	} else if (trial.same_practice.response == 0){
+		values.selectFeedback = 3;
+	} else {
+		values.selectFeedback = 2;
+	};
+	
+	if (trial.same_practice.responsetext == parameters.responsekey_same){
+		values.responseCategory = "same";
+	} else if (trial.same_practice.response != 0){
+		values.responseCategory = "different";
+	} else {
+		values.responseCategory = "no response";
+	};
+	
+	list.ACC_practice.appenditem(trial.same_practice.correct);
+
+]
+/ branch = [
+	trial.feedback;
+]
+</trial>
+
+<trial different_practice>
+/ ontrialbegin = [
+	values.trialcount += 1;
+	values.sameness = "different";	
+]
+/ stimulusframes = [1 = different_practice, ResponseKeyReminder]
+/ validresponse = (parameters.responsekey_same, parameters.responsekey_different)
+/ correctresponse = (parameters.responsekey_different)
+/ beginresponsetime = 0
+/ response = timeout(parameters.responseTimeout)
+/ ontrialend = [
+	values.subset = substring(picture.different_practice.currentitem, 0, 2);
+	if (contains(values.subset, "_")){
+		values.subset = substring(values.subset, 0, 1);
+	};
+	values.rotationAngle = substring(picture.different_practice.currentitem, 3, 2);
+	if (contains(picture.different_practice.currentitem, "100")){
+		values.rotationAngle = 100;
+	} else if (contains(picture.different_practice.currentitem, "150")){
+		values.rotationAngle = 150;
+	} else if (contains(picture.different_practice.currentitem, "50")){
+		values.rotationAngle = 50;
+	} else {
+		values.rotationAngle = 0;
+	};
+	
+	
+	if (trial.different_practice.correct){
+		values.selectFeedback = 1;
+	} else if (trial.different_practice.response == 0){
+		values.selectFeedback = 3;
+	} else {
+		values.selectFeedback = 2;
+	};
+	
+	if (trial.different_practice.responsetext == parameters.responsekey_same){
+		values.responseCategory = "same";
+	} else if (trial.different_practice.response != 0){
+		values.responseCategory = "different";
+	} else {
+		values.responseCategory = "no response";
+	};	
+	
+	list.ACC_practice.appenditem(trial.different_practice.correct);
+]
+/ branch = [
+	return trial.feedback;
+]
+</trial>
+
+<trial feedback>
+/ ontrialbegin = [
+	values.responseCategory = "";
+]
+/ stimulusframes = [1 = feedback1, feedback2, continue]
+/ validresponse = (" ")
+/ responsemessage = (" ", clearscreen, 0)
+/ posttrialpause = parameters.iti
+</trial>
+
+
+**************************************************************************************************************
+**************************************************************************************************************
+	TRIALS:
+**************************************************************************************************************
+**************************************************************************************************************
+
+Note: trial.nexttrial is a helper trial that allows the user to 
+to run as many trials.same/different as specified by parameters.subsetSize
+trial.nexttrial also functions as the ITI
+
+<trial nexttrial>
+//for touchscreen devices: present the inactive response buttons
+/ validresponse = (parameters.responsekey_same, parameters.responsekey_different)
+/ isvalidresponse = [
+	return(false);
+]
+
+/ trialduration = parameters.iti
+/ branch = [
+	if (values.trialcount < expressions.numberOfTrials){
+		if (list.nexttrial.nextvalue == 1){
+			return trial.same;
+		} else {
+			return trial.different;
+		};
+	};
+]
+/ recorddata = false
+</trial>
+
+<trial same>
+/ ontrialbegin = [
+	values.trialcount += 1;
+	values.sameness = "same";	
+]
+/ stimulusframes = [1 = same, ResponseKeyReminder]
+/ validresponse = (parameters.responsekey_same, parameters.responsekey_different)
+/ correctresponse = (parameters.responsekey_same)
+/ beginresponsetime = 0
+/ response = timeout(parameters.responseTimeout)
+/ ontrialend = [
+	values.subset = substring(picture.same.currentitem, 0, 2);
+	if (contains(values.subset, "_")){
+		values.subset = substring(values.subset, 0, 1);
+	};
+	values.rotationAngle = substring(picture.same.currentitem, 3, 2);
+	if (contains(picture.same.currentitem, "100")){
+		values.rotationAngle = 100;
+	} else if (contains(picture.same.currentitem, "150")){
+		values.rotationAngle = 150;
+	} else if (contains(picture.same.currentitem, "50")){
+		values.rotationAngle = 50;
+	} else {
+		values.rotationAngle = 0;
+	};
+
+	
+	list.ACC.appenditem(trial.same.correct);
+	list.ACC_same.appenditem(trial.same.correct);
+	if (values.rotationAngle == 0){
+		list.ACC_0.appenditem(trial.same.correct);
+		list.ACC_0_same.appenditem(trial.same.correct);
+	} else if (values.rotationAngle == 50){
+		list.ACC_50.appenditem(trial.same.correct);
+		list.ACC_50_same.appenditem(trial.same.correct);		
+	} else if (values.rotationAngle == 100){
+		list.ACC_100.appenditem(trial.same.correct);
+		list.ACC_100_same.appenditem(trial.same.correct);		
+	} else if (values.rotationAngle == 150){
+		list.ACC_150.appenditem(trial.same.correct);
+		list.ACC_150_same.appenditem(trial.same.correct);		
+	};
+	
+	if (trial.same.correct){
+		list.RT.appenditem(trial.same.latency);
+		list.RT_same.appenditem(trial.same.latency);
+		if (values.rotationAngle == 0){
+			list.RT_0.appenditem(trial.same.latency);
+			list.RT_0_same.appenditem(trial.same.latency);
+		} else if (values.rotationAngle == 50){
+			list.RT_50.appenditem(trial.same.latency);
+			list.RT_50_same.appenditem(trial.same.latency);			
+		} else if (values.rotationAngle == 100){
+			list.RT_100.appenditem(trial.same.latency);
+			list.RT_100_same.appenditem(trial.same.latency);			
+		} else if (values.rotationAngle == 150){
+			list.RT_150.appenditem(trial.same.latency);
+			list.RT_150_same.appenditem(trial.same.latency);			
+		};			
+	};
+	
+	if (trial.same.responsetext == parameters.responsekey_same){
+		values.responseCategory = "same";
+	} else if (trial.same.response != 0){
+		values.responseCategory = "different";
+	} else {
+		values.responseCategory = "no response";
+	};	
+]
+/ branch = [
+	if (mod(values.trialcount, parameters.restTrial) == 0){
+		return trial.break;
+	} else {
+		return trial.nexttrial;		
+	};
+]
+</trial>
+
+<trial different>
+/ ontrialbegin = [
+	values.trialcount += 1;
+	values.sameness = "different";
+]
+/ stimulusframes = [1 = different, ResponseKeyReminder]
+/ validresponse = (parameters.responsekey_same, parameters.responsekey_different)
+/ correctresponse = (parameters.responsekey_different)
+/ beginresponsetime = 0
+/ response = timeout(parameters.responseTimeout)
+/ ontrialend = [
+	values.subset = substring(picture.different.currentitem, 0, 2);
+	if (contains(values.subset, "_")){
+		values.subset = substring(values.subset, 0, 1);
+	};
+	values.rotationAngle = substring(picture.different.currentitem, 3, 2);
+	if (contains(picture.different.currentitem, "100")){
+		values.rotationAngle = 100;
+	} else if (contains(picture.different.currentitem, "150")){
+		values.rotationAngle = 150;
+	} else if (contains(picture.different.currentitem, "50")){
+		values.rotationAngle = 50;
+	} else {
+		values.rotationAngle = 0;
+	};
+	
+	list.ACC.appenditem(trial.different.correct);
+	list.ACC_different.appenditem(trial.different.correct);
+	if (values.rotationAngle == 0){
+		list.ACC_0.appenditem(trial.different.correct);
+		list.ACC_0_different.appenditem(trial.different.correct);
+	} else if (values.rotationAngle == 50){
+		list.ACC_50.appenditem(trial.different.correct);
+		list.ACC_50_different.appenditem(trial.different.correct);		
+	} else if (values.rotationAngle == 100){
+		list.ACC_100.appenditem(trial.different.correct);
+		list.ACC_100_different.appenditem(trial.different.correct);		
+	} else if (values.rotationAngle == 150){
+		list.ACC_150.appenditem(trial.different.correct);
+		list.ACC_150_different.appenditem(trial.different.correct);		
+	};
+	
+	if (trial.different.correct){
+		list.RT.appenditem(trial.different.latency);
+		list.RT_different.appenditem(trial.different.latency);
+		if (values.rotationAngle == 0){
+			list.RT_0.appenditem(trial.different.latency);
+			list.RT_0_different.appenditem(trial.different.latency);
+		} else if (values.rotationAngle == 50){
+			list.RT_50.appenditem(trial.different.latency);
+			list.RT_50_different.appenditem(trial.different.latency);			
+		} else if (values.rotationAngle == 100){
+			list.RT_100.appenditem(trial.different.latency);
+			list.RT_100_different.appenditem(trial.different.latency);			
+		} else if (values.rotationAngle == 150){
+			list.RT_150.appenditem(trial.different.latency);
+			list.RT_150_different.appenditem(trial.different.latency);			
+		};			
+	};
+
+	if (trial.different.responsetext == parameters.responsekey_same){
+		values.responseCategory = "same";
+	} else if (trial.different.response != 0){
+		values.responseCategory = "different";
+	} else {
+		values.responseCategory = "no response";
+	};	
+]
+/ branch = [
+	if (mod(values.trialcount, parameters.restTrial) == 0){
+		return trial.break;
+	} else {
+		return trial.nexttrial;		
+	};
+]
+</trial>
+
+<trial break>
+/ skip = [
+	values.trialcount >= expressions.numberOfTrials;
+]
+/ stimulusframes = [1 = break, continue]
+/ validresponse = (" ")
+/ recorddata = true
+/ ontrialend = [
+	values.responseCategory = "";
+]
+/ branch = [
+	return trial.nexttrial;
+]
+</trial>
+
+
+**************************************************************************************************************
+**************************************************************************************************************
+	BLOCKS
+**************************************************************************************************************
+**************************************************************************************************************
+
+Note: this block selects the subsets used for the test block and the practice block
+<block subsetGeneration>
+/ trials = [1 = subsetGeneration]
+</block>
+
+<block practice>
+/ trials = [1-16 = noreplace(same_practice, different_practice)]
+/ onblockend = [
+	values.trialcount = 0;
+]
+</block>
+
+<block mentalrotation>
+/ preinstructions = (testStart)
+/ trials = [1 = nexttrial]
+</block>
+
+<block finish>
+/ trials = [1 = finish]
+</block>
+
+
+**************************************************************************************************************
+**************************************************************************************************************
+	EXPERIMENT 
+**************************************************************************************************************
+**************************************************************************************************************
+
+<expt>
+/ preinstructions = (intro, intro2, intro3)
+/ onexptbegin = [
+	list.nexttrial.poolsize = expressions.numberOfTrials;
+	if (parameters.subsetSize > 48){
+		parameters.subsetSize = 48;
+	};
+]
+/ blocks = [
+	1 = subsetGeneration;
+	2 = practice;
+	3 = mentalrotation;
+	4 = finish;
+]
+</expt>
+
+**************************************************************************************************************
+												End of File
+**************************************************************************************************************

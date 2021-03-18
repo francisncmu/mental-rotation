@@ -1,0 +1,34 @@
+build	computer.platform	date	time	subject	group	sessionid	blockcode	blocknum	trialcode	trialnum	subsets	subsets_practice	trialcount	stimulusitem1	subset	sameness	rotationAngle	response	responseCategory	correct	latency
+6.3.5	win	2021-03-09	21:48:59	1	1	1	practice	2	different_practice	1	8;34;41;32;18;15;12;20;22;24;17;46;	5;6;	1	5_100_R.jpg	5	different	100	31	same	0	322
+6.3.5	win	2021-03-09	21:48:59	1	1	1	practice	2	feedback	2	8;34;41;32;18;15;12;20;22;24;17;46;	5;6;	1	Incorrect.	5	different	100	57		0	422
+6.3.5	win	2021-03-09	21:48:59	1	1	1	practice	2	different_practice	3	8;34;41;32;18;15;12;20;22;24;17;46;	5;6;	2	5_50_R.jpg	5	different	50	32	different	1	4
+6.3.5	win	2021-03-09	21:48:59	1	1	1	practice	2	feedback	4	8;34;41;32;18;15;12;20;22;24;17;46;	5;6;	2	Correct!	5	different	50	57		0	2120
+6.3.5	win	2021-03-09	21:48:59	1	1	1	practice	2	same_practice	5	8;34;41;32;18;15;12;20;22;24;17;46;	5;6;	3	6_0.jpg	6	same	0	31	same	1	2764
+6.3.5	win	2021-03-09	21:48:59	1	1	1	practice	2	feedback	6	8;34;41;32;18;15;12;20;22;24;17;46;	5;6;	3	Correct!	6	same	0	57		0	370
+6.3.5	win	2021-03-09	21:48:59	1	1	1	practice	2	same_practice	7	8;34;41;32;18;15;12;20;22;24;17;46;	5;6;	4	5_0.jpg	5	same	0	32	different	0	233
+6.3.5	win	2021-03-09	21:48:59	1	1	1	practice	2	feedback	8	8;34;41;32;18;15;12;20;22;24;17;46;	5;6;	4	Incorrect.	5	same	0	57		0	230
+6.3.5	win	2021-03-09	21:48:59	1	1	1	practice	2	same_practice	9	8;34;41;32;18;15;12;20;22;24;17;46;	5;6;	5	5_50.jpg	5	same	50	32	different	0	538
+6.3.5	win	2021-03-09	21:48:59	1	1	1	practice	2	feedback	10	8;34;41;32;18;15;12;20;22;24;17;46;	5;6;	5	Incorrect.	5	same	50	57		0	211
+6.3.5	win	2021-03-09	21:48:59	1	1	1	practice	2	different_practice	11	8;34;41;32;18;15;12;20;22;24;17;46;	5;6;	6	6_0_R.jpg	6	different	0	32	different	1	128
+6.3.5	win	2021-03-09	21:48:59	1	1	1	practice	2	feedback	12	8;34;41;32;18;15;12;20;22;24;17;46;	5;6;	6	Correct!	6	different	0	57		0	178
+6.3.5	win	2021-03-09	21:48:59	1	1	1	practice	2	different_practice	13	8;34;41;32;18;15;12;20;22;24;17;46;	5;6;	7	5_150_R.jpg	5	different	150	31	same	0	32
+6.3.5	win	2021-03-09	21:48:59	1	1	1	practice	2	feedback	14	8;34;41;32;18;15;12;20;22;24;17;46;	5;6;	7	Incorrect.	5	different	150	57		0	214
+6.3.5	win	2021-03-09	21:48:59	1	1	1	practice	2	different_practice	15	8;34;41;32;18;15;12;20;22;24;17;46;	5;6;	8	6_100_R.jpg	6	different	100	31	same	0	362
+6.3.5	win	2021-03-09	21:48:59	1	1	1	practice	2	feedback	16	8;34;41;32;18;15;12;20;22;24;17;46;	5;6;	8	Incorrect.	6	different	100	57		0	411
+6.3.5	win	2021-03-09	21:48:59	1	1	1	practice	2	different_practice	17	8;34;41;32;18;15;12;20;22;24;17;46;	5;6;	9	5_0_R.jpg	5	different	0	32	different	1	343
+6.3.5	win	2021-03-09	21:48:59	1	1	1	practice	2	feedback	18	8;34;41;32;18;15;12;20;22;24;17;46;	5;6;	9	Correct!	5	different	0	57		0	184
+6.3.5	win	2021-03-09	21:48:59	1	1	1	practice	2	same_practice	19	8;34;41;32;18;15;12;20;22;24;17;46;	5;6;	10	6_50.jpg	6	same	50	31	same	1	150
+6.3.5	win	2021-03-09	21:48:59	1	1	1	practice	2	feedback	20	8;34;41;32;18;15;12;20;22;24;17;46;	5;6;	10	Correct!	6	same	50	57		0	88
+6.3.5	win	2021-03-09	21:48:59	1	1	1	practice	2	different_practice	21	8;34;41;32;18;15;12;20;22;24;17;46;	5;6;	11	6_150_R.jpg	6	different	150	32	different	1	74
+6.3.5	win	2021-03-09	21:48:59	1	1	1	practice	2	feedback	22	8;34;41;32;18;15;12;20;22;24;17;46;	5;6;	11	Correct!	6	different	150	57		0	2717
+6.3.5	win	2021-03-09	21:48:59	1	1	1	practice	2	same_practice	23	8;34;41;32;18;15;12;20;22;24;17;46;	5;6;	12	5_150.jpg	5	same	150	31	same	1	515
+6.3.5	win	2021-03-09	21:48:59	1	1	1	practice	2	feedback	24	8;34;41;32;18;15;12;20;22;24;17;46;	5;6;	12	Correct!	5	same	150	57		0	229
+6.3.5	win	2021-03-09	21:48:59	1	1	1	practice	2	different_practice	25	8;34;41;32;18;15;12;20;22;24;17;46;	5;6;	13	6_50_R.jpg	6	different	50	32	different	1	457
+6.3.5	win	2021-03-09	21:48:59	1	1	1	practice	2	feedback	26	8;34;41;32;18;15;12;20;22;24;17;46;	5;6;	13	Correct!	6	different	50	57		0	238
+6.3.5	win	2021-03-09	21:48:59	1	1	1	practice	2	same_practice	27	8;34;41;32;18;15;12;20;22;24;17;46;	5;6;	14	6_150.jpg	6	same	150	31	same	1	314
+6.3.5	win	2021-03-09	21:48:59	1	1	1	practice	2	feedback	28	8;34;41;32;18;15;12;20;22;24;17;46;	5;6;	14	Correct!	6	same	150	57		0	196
+6.3.5	win	2021-03-09	21:48:59	1	1	1	practice	2	same_practice	29	8;34;41;32;18;15;12;20;22;24;17;46;	5;6;	15	5_100.jpg	5	same	100	32	different	0	203
+6.3.5	win	2021-03-09	21:48:59	1	1	1	practice	2	feedback	30	8;34;41;32;18;15;12;20;22;24;17;46;	5;6;	15	Incorrect.	5	same	100	57		0	273
+6.3.5	win	2021-03-09	21:48:59	1	1	1	practice	2	same_practice	31	8;34;41;32;18;15;12;20;22;24;17;46;	5;6;	16	6_100.jpg	6	same	100	31	same	1	267
+6.3.5	win	2021-03-09	21:48:59	1	1	1	practice	2	feedback	32	8;34;41;32;18;15;12;20;22;24;17;46;	5;6;	16	Correct!	6	same	100	57		0	471
+6.3.5	win	2021-03-09	21:48:59	1	1	1	mentalrotation	3	same	2	8;34;41;32;18;15;12;20;22;24;17;46;	5;6;	1	41_0.jpg	41	same	0	Ctrl+'Q'	different	1	2406

@@ -1,0 +1,5 @@
+build	computer.platform	date	time	subject	group	sessionid	blockcode	blocknum	trialcode	trialnum	subsets	subsets_practice	trialcount	stimulusitem1	subset	sameness	rotationAngle	response	responseCategory	correct	latency
+6.3.5	win	2021-03-11	01:07:06	1	1	1	practice	2	different_practice	1	46;4;21;37;11;8;12;32;34;47;38;41;	25;45;	1	25_50_R.jpg	25	different	50	31	same	0	2201
+6.3.5	win	2021-03-11	01:07:06	1	1	1	practice	2	feedback	2	46;4;21;37;11;8;12;32;34;47;38;41;	25;45;	1	Incorrect.	25	different	50	57		0	18905
+6.3.5	win	2021-03-11	01:07:06	1	1	1	practice	2	different_practice	3	46;4;21;37;11;8;12;32;34;47;38;41;	25;45;	2	45_0_R.jpg	45	different	0	32	different	1	2071
+6.3.5	win	2021-03-11	01:07:06	1	1	1	practice	2	feedback	4	46;4;21;37;11;8;12;32;34;47;38;41;	25;45;	2	Correct!	45	different	0	Ctrl+'Q'		1	5241

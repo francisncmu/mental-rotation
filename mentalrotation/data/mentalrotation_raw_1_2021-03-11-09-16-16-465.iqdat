@@ -1,0 +1,15 @@
+build	computer.platform	date	time	subject	group	sessionid	blockcode	blocknum	trialcode	trialnum	subsets	subsets_practice	trialcount	stimulusitem1	subset	sameness	rotationAngle	response	responseCategory	correct	latency
+6.3.5	win	2021-03-11	01:16:16	1	1	1	practice	2	different_practice	1	39;23;34;25;5;19;28;10;26;2;8;43;	20;40;	1	20_0_R.jpg	20	different	0	31	same	0	3872
+6.3.5	win	2021-03-11	01:16:16	1	1	1	practice	2	feedback	2	39;23;34;25;5;19;28;10;26;2;8;43;	20;40;	1	Incorrect.	20	different	0	57		0	15026
+6.3.5	win	2021-03-11	01:16:16	1	1	1	practice	2	different_practice	3	39;23;34;25;5;19;28;10;26;2;8;43;	20;40;	2	20_150_R.jpg	20	different	150	0	no response	0	7500
+6.3.5	win	2021-03-11	01:16:16	1	1	1	practice	2	feedback	4	39;23;34;25;5;19;28;10;26;2;8;43;	20;40;	2	Please, respond faster.	20	different	150	57		0	17554
+6.3.5	win	2021-03-11	01:16:16	1	1	1	practice	2	different_practice	5	39;23;34;25;5;19;28;10;26;2;8;43;	20;40;	3	40_50_R.jpg	40	different	50	32	different	1	1024
+6.3.5	win	2021-03-11	01:16:16	1	1	1	practice	2	feedback	6	39;23;34;25;5;19;28;10;26;2;8;43;	20;40;	3	Correct!	40	different	50	57		0	2805
+6.3.5	win	2021-03-11	01:16:16	1	1	1	practice	2	different_practice	7	39;23;34;25;5;19;28;10;26;2;8;43;	20;40;	4	20_100_R.jpg	20	different	100	32	different	1	1983
+6.3.5	win	2021-03-11	01:16:16	1	1	1	practice	2	feedback	8	39;23;34;25;5;19;28;10;26;2;8;43;	20;40;	4	Correct!	20	different	100	57		0	1869
+6.3.5	win	2021-03-11	01:16:16	1	1	1	practice	2	different_practice	9	39;23;34;25;5;19;28;10;26;2;8;43;	20;40;	5	40_0_R.jpg	40	different	0	32	different	1	1662
+6.3.5	win	2021-03-11	01:16:16	1	1	1	practice	2	feedback	10	39;23;34;25;5;19;28;10;26;2;8;43;	20;40;	5	Correct!	40	different	0	57		0	609
+6.3.5	win	2021-03-11	01:16:16	1	1	1	practice	2	different_practice	11	39;23;34;25;5;19;28;10;26;2;8;43;	20;40;	6	40_150_R.jpg	40	different	150	32	different	1	4109
+6.3.5	win	2021-03-11	01:16:16	1	1	1	practice	2	feedback	12	39;23;34;25;5;19;28;10;26;2;8;43;	20;40;	6	Correct!	40	different	150	57		0	459
+6.3.5	win	2021-03-11	01:16:16	1	1	1	practice	2	same_practice	13	39;23;34;25;5;19;28;10;26;2;8;43;	20;40;	7	20_50.jpg	20	same	50	31	same	1	1388
+6.3.5	win	2021-03-11	01:16:16	1	1	1	practice	2	feedback	14	39;23;34;25;5;19;28;10;26;2;8;43;	20;40;	7	Correct!	20	same	50	Ctrl+'Q'		1	5603
