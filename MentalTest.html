@@ -83,53 +83,13 @@
     /* create timeline */
     var timeline = [];
 
-    /* preload images */
-    /*all_images = []
-    for (var i = 1; i > 48; i--) {
-      all_images.push("mentalrotation/vx_0.jpg".replace("vx", (i)),
-        "mentalrotation/vx_0_r.jpg".replace("vx", (i)),
-        "mentalrotation/vx_50.jpg".replace("vx", (i)),
-        "mentalrotation/vx_50_r.jpg".replace("vx", (i)),
-        "mentalrotation/vx_100.jpg".replace("vx", (i)),
-        "mentalrotation/vx_100_r.jpg".replace("vx", (i)),
-        "mentalrotation/vx_150.jpg".replace("vx", (i)),
-        "mentalrotation/vx_150_r.jpg".replace("vx", (i)),)
-    }
-    var preload = {
-      type: 'preload',
-      images: all_images
-    }
-    timeline.push(preload);
-    */
-    /* define welcome message trial */
+    /* preload images + creating data*/
     var welcome = {
       type: "html-keyboard-response",
       stimulus: "Welcome to the experiment. Press any key to begin."
     };
     timeline.push(welcome);
 
-    /* define instructions trial */
-    var instructions = {
-      type: "html-keyboard-response",
-      stimulus: `
-    <div class = "center">
-		<h1>Mental Rotation</h1><hr>
-		<p>You will be given two cube objects side by side.<br>
-		The cubes can be the same or they can be mirror images of each other. </p>
-		<img src="mentalrotation/example.png" style="height:20vh"/><br>
-		<p><span class="yellow"><i>Are these cube objects the <b>same</b> object or are they <b>mirror</b> images?</i></span></p>
-		</div>
-    <div class ="left">
-    <p>In order to decide whether the cube objects are the same or mirror images, you can mentally rotate one of these
-    objects. For example, if you are able to rotate the right object into a position to match the cube object on the left 
-    then the objects are the same. If you cannot, then the objects are different.</p>
-    <p>Try it out. Press any key to continue to see if you are correct.</p>
-    </div>
-      `,
-    };
-    timeline.push(instructions);
-
-    /* Setting up data*/
     var test_images = [];
     var s_image = 'g'; //Will be changed later
     var d_image = 'h'; //Will be changed later
@@ -162,34 +122,77 @@
     }
     timeline.push(check_code)
 
+    function translate(response){
+      if (response=='same'){
+        console.log(s_image);
+        return s_image}
+      else{console.log("different yeet");
+      console.log(d_image);
+      return d_image}
+    }
     for (var i = 1; i <= 48; i++) {
       test_images.push(
-        { stimulus: "mentalrotation/vx_0.jpg".replace("vx", (i)), rotation: 0, correct_response: s_image},
-        { stimulus: "mentalrotation/vx_0_r.jpg".replace("vx", (i)), rotation: 0, correct_response: d_image},
-        { stimulus: "mentalrotation/vx_50.jpg".replace("vx", (i)), rotation: 50, correct_response: s_image},
-        { stimulus: "mentalrotation/vx_50_r.jpg".replace("vx", (i)), rotation: 50, correct_response: d_image},
-        { stimulus: "mentalrotation/vx_100.jpg".replace("vx", (i)), rotation: 100, correct_response: s_image},
-        { stimulus: "mentalrotation/vx_100_r.jpg".replace("vx", (i)), rotation: 100, correct_response: d_image},
-        { stimulus: "mentalrotation/vx_150.jpg".replace("vx", (i)), rotation: 150, correct_response: s_image},
-        { stimulus: "mentalrotation/vx_150_r.jpg".replace("vx", (i)), rotation: 150, correct_response: d_image}
+        { stimulus: "mentalrotation/vx_0.jpg".replace("vx", (i)), rotation: 0, correct_response: 'same'},
+        { stimulus: "mentalrotation/vx_0_r.jpg".replace("vx", (i)), rotation: 0, correct_response: 'mirrored'},
+        { stimulus: "mentalrotation/vx_50.jpg".replace("vx", (i)), rotation: 50, correct_response: 'same'},
+        { stimulus: "mentalrotation/vx_50_r.jpg".replace("vx", (i)), rotation: 50, correct_response: 'mirrored'},
+        { stimulus: "mentalrotation/vx_100.jpg".replace("vx", (i)), rotation: 100, correct_response: 'same'},
+        { stimulus: "mentalrotation/vx_100_r.jpg".replace("vx", (i)), rotation: 100, correct_response: 'mirrored'},
+        { stimulus: "mentalrotation/vx_150.jpg".replace("vx", (i)), rotation: 150, correct_response: 'same'},
+        { stimulus: "mentalrotation/vx_150_r.jpg".replace("vx", (i)), rotation: 150, correct_response: 'mirrored'}
         )
     }
 
     var randomized_test_images = jsPsych.randomization.repeat(test_images, 1)
 
+    var loaded_images = []
     var images_set_1 = []
     var images_set_2 = []
     for (var i = 1; i <= 96; i++){
       if (i % 2 == 0) {images_set_1.push(randomized_test_images[i])}
       else {images_set_2.push(randomized_test_images[i])}
+      loaded_images.push(randomized_test_images[i].stimulus)
     }
 
-    var practice_set = []
-    for (var i = 97; i <= 112; i++){
-      practice_set.push(randomized_test_images[i])
+    var practice_set1 = []
+    var practice_set2 = []
+    for (var i = 97; i <= 102; i++){
+      practice_set1.push(randomized_test_images[i]);
+      loaded_images.push(randomized_test_images[i].stimulus);
+    }
+    for (var i = 103; i <= 112; i++){
+      practice_set2.push(randomized_test_images[i]);
+      loaded_images.push(randomized_test_images[i].stimulus);
     }
 
-    /* Practice Trials */
+    /* Setting up data*/
+    var preload = {
+      type: 'preload',
+      images: loaded_images
+    }
+    timeline.push(preload);
+
+    /* define instructions trial */
+    var instructions = {
+      type: "html-keyboard-response",
+      stimulus: `
+    <div class = "center">
+    <h1>Mental Rotation</h1><hr>
+    <p>You will be given two cube objects side by side.<br>
+    The cubes can be the same or they can be mirror images of each other. </p>
+    <img src="mentalrotation/example.png" style="height:20vh"/><br>
+    <p><span class="yellow"><i>Are these cube objects the <b>same</b> object or are they <b>mirror</b> images?</i></span></p>
+    </div>
+    <div class ="left">
+    <p>In order to decide whether the cube objects are the same or mirror images, you can mentally rotate one of these
+    objects. For example, if you are able to rotate the right object into a position to match the cube object on the left 
+    then the objects are the same. If you cannot, then the objects are different.</p>
+    <p>Try it out. Press any key to continue to see if you are correct.</p>
+    </div>
+      `,
+    };
+    timeline.push(instructions);
+
     var practice_instructions = {
       type: "html-keyboard-response",
       stimulus: `
@@ -213,7 +216,22 @@
     choices: [' ']
     }
 
+    var practice_instructions_keyboard = {
+      type: "html-keyboard-response",
+      stimulus: `
+      <div class = "center">
+        <h1>Mental Rotation</h1><hr>
+        <img src="Keyboard.png" style="height:50vh"/><br>
+        <p>For this experiment you will need to use the 'g' and 'h' keys <br>
+        Please place your hands on the keyboard like in the picture above <br>(If not on a computer please change your device).</p>
+        <p style="opacity:0.5;">Press Space to continue
+                </p>
+    </div>`,
+    choices: [' ']
+    }
+
     timeline.push(practice_instructions);
+    timeline.push(practice_instructions_keyboard);
 
     var practice_instructions2_G = {
       type: "html-keyboard-response",
@@ -233,11 +251,11 @@
             <td>Press the 'H' button</td>
           </tr>
         </table>
-      <p><strong><span id="biggerfont">Respond as fast as you can without making too many errors.</span></strong><br>
-      <i><u>Note</u>:You have only a limited time to make your choice.</i></p>
+      <p><strong><span id="biggerfont">First take your time and make sure you answer correctly.</span></strong><br>
       <p>Once you've made your choice, the computer will give you feedback.</p><br>
-      <p>Press any button to start the practice session when you are ready.</p>
-    </div>`
+      <p>Press Space to start the practice session when you are ready.</p>
+    </div>`,
+    choices: [' ']
     }
     var practice_instructions2_H = {
       type: "html-keyboard-response",
@@ -257,30 +275,21 @@
             <td>Press the 'G' button</td>
           </tr>
         </table>
-      <p><strong><span id="biggerfont">Respond as fast as you can without making too many errors.</span></strong><br>
+      <p><strong><span id="biggerfont">First take your time and make sure you answer correctly.</span></strong><br>
       <p>Once you've made your choice, the computer will give you feedback.</p><br>
-      <p>Press any button to start the practice session when you are ready.</p>
-    </div>`
+      <p>Press Space to start the practice session when you are ready.</p>
+    </div>`,
+    choices: [' ']
     }
+
     if (s_image == 'g'){
       timeline.push(practice_instructions2_G)
     }
     else{
       timeline.push(practice_instructions2_H)
     }
-    var practice_instructions3 = {
-      type: "html-keyboard-response",
-      stimulus: `
-      <div class = "center">
-        <h1>Mental Rotation: Practice Session</h1><hr>
-      <p><strong><span id="biggerfont">We wilRespond as fast as you can without making too many errors.</span></strong><br>
-      <i><u>Note</u>:You have only a limited time to make your choice.</i></p>
-      <p>Once you've made your choice, the computer will give you feedback.</p><br>
-      <p>Press any button to start the practice session when you are ready.</p>
-    </div>`
-    }
 
-
+    /* Practice Trials */
     var pause = {
       type: 'html-keyboard-response',
       stimulus: '<div style="font-size:60px;"></div>',
@@ -288,14 +297,61 @@
       trial_duration: 250
     }
 
-    var practice = {
+    var practice1 = {
       type: 'categorize-image',
       stimulus: jsPsych.timelineVariable('stimulus'),
-      key_answer: jsPsych.timelineVariable('correct_response'),
+      key_answer: function() {return translate(jsPsych.timelineVariable('correct_response'))},
       choices: [s_image, d_image],
       text_answer: function(){
-        if (jsPsych.timelineVariable('correct_response')==s_image) {
-          console.log(d_image);
+        if (translate(jsPsych.timelineVariable('correct_response'))==s_image) {
+          return 'These images are the SAME rotated by ' + jsPsych.timelineVariable('rotation') + ' degrees';
+        } else {
+          return 'These images are MIRRORED rotated by ' + jsPsych.timelineVariable('rotation') + ' degrees';
+        }
+      },
+      prompt: function(){
+        if(s_image == "g") {
+          return "<p style='opacity:0.5;'> Same Object: Press G <br><br> Different Object: Press H</p>";
+        }
+        else{
+          return "<p style='opacity:0.5;'> Same Object: Press H <br><br> Different Object: Press G</p>";
+        }
+      },
+      correct_text: "<p style='color:green'>Correct! </p> <p>%ANS%</p>",
+      incorrect_text: "<p style='color:red'>Incorrect. </p> <p>%ANS%</p>",
+      feedback_duration: 2500,
+    }
+
+    var practiceblock1 = {
+      timeline: [practice1, pause],
+      timeline_variables: practice_set1,
+      sample: {
+        type: "without-replacement",
+      }
+    }
+    timeline.push(practiceblock1)
+
+    var practice_instructions3 = {
+      type: "html-keyboard-response",
+      stimulus: `
+      <div class = "center">
+        <h1>Mental Rotation: Practice Session</h1><hr>
+      <p><strong><span id="biggerfont">You are now required to answer as fast as possible.</span></strong><br>
+      <i><u>Note</u>:This will be the same amount of time given for the actual experiment.</i></p>
+      <p>You will still receive feedback as you go.</p><br>
+      <p>Press any button to start the practice session when you are ready.</p>
+    </div>`
+    }
+
+    timeline.push(practice_instructions3)
+
+    var practice2 = {
+      type: 'categorize-image',
+      stimulus: jsPsych.timelineVariable('stimulus'),
+      key_answer: function() {return translate(jsPsych.timelineVariable('correct_response'))},
+      choices: [s_image, d_image],
+      text_answer: function(){
+        if (translate(jsPsych.timelineVariable('correct_response'))==s_image) {
           return 'These images are the SAME rotated by ' + jsPsych.timelineVariable('rotation') + ' degrees';
         } else {
           return 'These images are MIRRORED rotated by ' + jsPsych.timelineVariable('rotation') + ' degrees';
@@ -312,19 +368,32 @@
       correct_text: "<p style='color:green'>Correct! </p> <p>%ANS%</p>",
       incorrect_text: "<p style='color:red'>Incorrect. </p> <p>%ANS%</p>",
       stimulus_duration: 7500,
-      feedback_duration: 2500,
-      trial_duration: 10000,
+      feedback_duration: 1500,
+      trial_duration: 9000,
     }
 
-    var practiceblock = {
-      timeline: [practice, pause],
-      timeline_variables: practice_set,
+    var practiceblock2 = {
+      timeline: [practice2, pause],
+      timeline_variables: practice_set2,
       sample: {
         type: "without-replacement",
       }
     }
-    timeline.push(practiceblock)
+    timeline.push(practiceblock2)
 
+    var practice_instructions4 = {
+      type: "html-keyboard-response",
+      stimulus: `
+      <div class = "center">
+        <h1>Mental Rotation: Practice Session</h1><hr>
+      <p><strong><span id="biggerfont">We will now not give you any feedback until the end to simulate the actual trial.</span></strong><br>
+      <i><u>Note</u>:You have only a limited time to make your choice.</i></p>
+      <p>Once you've made your choice, the computer will give you feedback.</p><br>
+      <p>Press any button to start the practice session when you are ready.</p>
+    </div>`
+    }
+
+    timeline.push(practice_instructions4)
     /* test trials */
     var start_instructions = {
       type: 'html-keyboard-response',
