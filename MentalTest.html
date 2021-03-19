@@ -381,26 +381,13 @@
     }
     timeline.push(practiceblock2)
 
-    var practice_instructions4 = {
-      type: "html-keyboard-response",
-      stimulus: `
-      <div class = "center">
-        <h1>Mental Rotation: Practice Session</h1><hr>
-      <p><strong><span id="biggerfont">We will now not give you any feedback until the end to simulate the actual trial.</span></strong><br>
-      <i><u>Note</u>:You have only a limited time to make your choice.</i></p>
-      <p>Once you've made your choice, the computer will give you feedback.</p><br>
-      <p>Press any button to start the practice session when you are ready.</p>
-    </div>`
-    }
-
-    timeline.push(practice_instructions4)
     /* test trials */
     var start_instructions = {
       type: 'html-keyboard-response',
       stimulus: `
       <div class = "center">
         <h1>Mental Rotation: Test Session</h1><hr>
-        <p>Practice is over and the test session is about to start. There will be no more feedback.</p>
+        <p>The practice trial is over and the actual experiment is about to begin. There will be no more feedback.</p>
         <p>The test session will take about 6 minutes.</p><br><br>
         <p>Press the spacebar when you are ready.</p>
       </div>`,
