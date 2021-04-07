@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My experiment</title>
+    <script src="jspsych-6.3.0/jspsych.js"></script>
+    <script src="jspsych-6.3.0/plugins/jspsych-html-keyboard-response.js"></script>
+    <script src="jspsych-6.3.0/plugins/jspsych-image-keyboard-response.js"></script>
+    <script src="jspsych-6.3.0/plugins/jspsych-video-slider-response.js"></script>
+    <script src="jspsych-6.3.0/plugins/jspsych-video-button-response.js"></script>
+    <script src="jspsych-6.3.0/plugins/jspsych-video-keyboard-response.js"></script>
+    <script src="jspsych-6.3.0/plugins/jspsych-preload.js"></script>
+    <script src="jspsych-6.3.0/plugins/jspsych-free-sort-manipulated.js"></script>
+    <link href="jspsych-6.3.0/css/jspsych.css" rel="stylesheet" type="text/css">
+    <style>
+	.center {
+		text-align: center;
+		}
+	.left {
+		text-align: left;
+		}
+	.right {
+		text-align: right;
+		}	
+	body {
+	    background-color:black;
+	    font-family: arial;
+	    color:white;	
+	    font-size: 3.5vh;
+	}
+	h1 {
+	    font-size: 5vh;
+	}
+	p {
+	    font-size: 3.5vh;
+	}
+	p.bigger {
+	    font-size: 4vh;
+	}	
+	li {
+	    font-size: 3.5vh;
+	}
+	.blue {
+		color: blue;
+	}	
+	.yellow {
+		color: yellow;
+	}
+	.red {
+		color: red;
+	}
+	.green {
+		color: lightgreen;
+	}
+
+	table, th, td {
+	    border: 0.5vh solid white;
+	    border-collapse: collapse;	
+		border-color: white;
+	}
+	th, td {
+	    padding: 0.5vh;
+	}
+	th {
+	    text-align: left;
+	}
+	table.tablecenter {
+	    margin-left:auto; 
+	    margin-right:auto;
+	}
+	.firstrow {
+		background-color: gray;
+	}
+
+	</style>
+
+  </head>
+  <body></body>
+  <script>
+
+    /* create timeline */
+    var timeline = [];
+
+    /* define welcome message trial */
+    var welcome = {
+      type: "html-keyboard-response",
+      stimulus: "Welcome to the experiment. Press any key to begin."
+    };
+    timeline.push(welcome);
+
+    /* define instructions trial */
+    var instructions = {
+      type: "html-keyboard-response",
+      stimulus: `
+		<h1>Test for actual experiment</h1><hr>
+		<p>You will be shown a video<br>
+		Please move the shapes accordingly. </p>
+      `,
+      post_trial_gap: 2000
+    };
+    timeline.push(instructions);
+
+    var sorting_stimuli = ["img/circle.jpg", "img/triangle.jpg", "img/octagon.jpg", "img/trapezoid.jpg"];
+
+    var sort_trial1 = {
+        type: 'free-sort',
+        stimuli: sorting_stimuli,
+        vid_stimulus: ['video/sample_video1.mp4'],
+        width: 1500,
+        height: 500,
+        prompt: "<p>Arrange the shapes according to the video!</p>",
+        stim_locations: [400, 400, 600, 600, 1000, 300, 400, 100],
+        stim_starts_inside: true,
+        sort_area_height: 700,
+        sort_area_width: 1500,
+        sort_area_shape: 'square'
+    };
+    timeline.push(sort_trial1)
+
+    /* start the experiment */
+    jsPsych.init({
+      timeline: timeline,
+      on_finish: function() {
+        jsPsych.data.displayData();
+      }
+    });
+  </script>
+</html>

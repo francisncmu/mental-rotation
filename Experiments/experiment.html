@@ -5,7 +5,11 @@
     <script src="jspsych-6.3.0/jspsych.js"></script>
     <script src="jspsych-6.3.0/plugins/jspsych-html-keyboard-response.js"></script>
     <script src="jspsych-6.3.0/plugins/jspsych-image-keyboard-response.js"></script>
+    <script src="jspsych-6.3.0/plugins/jspsych-video-slider-response.js"></script>
+    <script src="jspsych-6.3.0/plugins/jspsych-video-button-response.js"></script>
+    <script src="jspsych-6.3.0/plugins/jspsych-video-keyboard-response.js"></script>
     <script src="jspsych-6.3.0/plugins/jspsych-preload.js"></script>
+    <script src="jspsych-6.3.0/plugins/jspsych-free-sort-manipulated.js"></script>
     <link href="jspsych-6.3.0/css/jspsych.css" rel="stylesheet" type="text/css">
     <style>
 	.center {
@@ -83,6 +87,7 @@
     }
     timeline.push(preload);
 
+    var sorting_stimuli = ["img/blue.png", "img/orange.png"];
     /* define welcome message trial */
     var welcome = {
       type: "html-keyboard-response",
@@ -136,13 +141,36 @@
       }
     }
 
+    // var vidtest = {
+    //   type: 'video-button-response',
+    //   stimulus: [
+    //       'video/sample_video.mp4'
+    //   ],
+    //   choices: ['Happy','Sad','Angry','Peaceful'],
+    //   prompt: '<p>Which emotion the best descriptor of the main character\'s feelings?</p>'
+    // }
+    // timeline.push(vidtest)
+
+    var sort_trial = {
+        type: 'free-sort',
+        stimuli: sorting_stimuli,
+        vid_stimulus: ['video/sample_video.mp4'],
+        prompt: "<p>Click and drag the images below to sort them so that similar items are close together.</p>",
+        stim_locations: [400, 400, 500, 500],
+        stim_starts_inside: true,
+        sort_area_height: 700,
+        sort_area_width: 1500,
+        sort_area_shape: 'square'
+    };
+    timeline.push(sort_trial)
+
     var test_procedure = {
       timeline: [fixation, test],
       timeline_variables: test_stimuli,
       sample: {
         type: "without-replacement",
         size: 2
-      }
+      },
       randomize_order: true
     }
     timeline.push(test_procedure);
