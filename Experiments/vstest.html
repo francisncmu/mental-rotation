@@ -51,6 +51,15 @@
 	.green {
 		color: lightgreen;
 	}
+	.container{
+    width: 1500px;
+    overflow:hidden;
+    display:block;
+    height: 900px;
+	}
+	#glass{
+    margin-bottom: -220px;
+	}
 
 	table, th, td {
 	    border: 0.5vh solid white;
@@ -99,22 +108,44 @@
     };
     timeline.push(instructions);
 
-    var sorting_stimuli = ["img/circle.jpg", "img/triangle.jpg", "img/octagon.jpg", "img/trapezoid.jpg"];
+    var sorting_stimuli_a = ["img/parallelogram.png", "img/trapezoid.png", "img/hexagon.png", "img/pyramid.png", "img/cylinder.png", "img/oval.png"];
+    var sorting_stimuli_b = ["img/elephant.png", "img/dog.png", "img/monke.png", "img/rabbit.png", "img/zebra.png", "img/lion.png"];
 
     var sort_trial1 = {
         type: 'free-sort',
-        stimuli: sorting_stimuli,
-        vid_stimulus: ['video/sample_video1.mp4'],
-        width: 1500,
-        height: 500,
-        prompt: "<p>Arrange the shapes according to the video!</p>",
-        stim_locations: [400, 400, 600, 600, 1000, 300, 400, 100],
+        stimuli: sorting_stimuli_a,
+        vid_stimulus: ['video/sample1_cropped.mp4'],
+        vid_width: 1200,
+        border_color_in: '#ffffff',
+        prompt: "<p>Arrange the shapes in the lower box according to the video</p>",
+        counter_text_finished: "Press Continue after you have moved the objects",
+        counter_text_unfinished: "Please keep all items within the designated area",
+        stim_locations: [200, 200, 400, 400, 800, 300, 1000, 100, 700, 50, 500, 100],
         stim_starts_inside: true,
-        sort_area_height: 700,
-        sort_area_width: 1500,
+        sort_area_width: 1250,
+        sort_area_height: 500,
+        response_allowed_while_playing: false,
         sort_area_shape: 'square'
     };
     timeline.push(sort_trial1)
+
+    var sort_trial2 = {
+        type: 'free-sort',
+        stimuli: sorting_stimuli_b,
+        vid_stimulus: ['video/sample2_cropped.mp4'],
+        vid_width: 1200,
+        border_color_in: '#ffffff',
+        prompt: "<p>Arrange the shapes in the lower box according to the video</p>",
+        counter_text_finished: "Press Continue after you have moved the objects",
+        counter_text_unfinished: "Please keep all items within the designated area",
+        stim_locations: [200, 100, 200, 300, 500, 100, 500, 300, 800, 50, 900, 250],
+        stim_starts_inside: true,
+        sort_area_width: 1250,
+        sort_area_height: 500,
+        response_allowed_while_playing: false,
+        sort_area_shape: 'square'
+    };
+    timeline.push(sort_trial2)
 
     /* start the experiment */
     jsPsych.init({

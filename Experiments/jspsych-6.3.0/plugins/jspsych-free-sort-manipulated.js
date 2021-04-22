@@ -11,7 +11,7 @@ jsPsych.plugins['free-sort'] = (function() {
 
   var plugin = {};
 
-  jsPsych.pluginAPI.registerPreload('free-sort', 'stimuli', 'image');
+  jsPsych.pluginAPI.registerPreload('free-sort', 'stimuli', 'image', 'video');
 
   plugin.info = {
     name: 'free-sort',
@@ -151,6 +151,18 @@ jsPsych.plugins['free-sort'] = (function() {
         default: undefined,
         description: 'The video file to play.'
       },
+      vid_width: {
+        type: jsPsych.plugins.parameterType.INT,
+        pretty_name: 'Video Width',
+        default: '',
+        description: 'The width of the video in pixels.'
+      },
+      vid_height: {
+        type: jsPsych.plugins.parameterType.INT,
+        pretty_name: 'Video Height',
+        default: '',
+        description: 'The height of the video display in pixels.'
+      },
       autoplay: {
         type: jsPsych.plugins.parameterType.BOOL,
         pretty_name: 'Autoplay',
@@ -209,11 +221,11 @@ jsPsych.plugins['free-sort'] = (function() {
   	var video_html = '<div>'
     video_html += '<video id="jspsych-video-keyboard-response-stimulus"';
 
-    if(trial.width) {
-      video_html += ' width="'+trial.width+'"';
+    if(trial.vid_width) {
+      video_html += ' width="'+trial.vid_width+'"';
     }
-    if(trial.height) {
-      video_html += ' height="'+trial.height+'"';
+    if(trial.vid_height) {
+      video_html += ' height="'+trial.vid_height+'"';
     }
     if(trial.autoplay & (trial.start == null)){
       // if autoplay is true and the start time is specified, then the video will start automatically
@@ -510,7 +522,8 @@ jsPsych.plugins['free-sort'] = (function() {
           init_locations: init_locations,
           moves: moves,
           final_locations: final_locations,
-          rt: rt
+          rt: rt,
+          stimulus: trial.vid_stimulus
         };
         
         // advance to next part
